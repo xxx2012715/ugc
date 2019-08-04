@@ -26,7 +26,7 @@
           trigger: 'axis'
         },
         legend: {
-          data: ['开始任务量', '验收任务量']
+          data: [{ name: '开始任务量', textStyle: { fontSize: '20' } }, { name: '验收任务量', textStyle: { fontSize: '20' } },]
         },
         toolbox: {
           show: true,
@@ -35,7 +35,7 @@
             dataView: { show: true, readOnly: false },
             magicType: { show: true, type: ['line', 'bar', 'stack', 'tiled'] },
             restore: { show: true },
-            saveAsImage: { show: true }
+            saveAsImage: { show: true },
           }
         },
         calculable: true,
@@ -43,7 +43,7 @@
           {
             type: 'category',
             boundaryGap: false,
-            data: ['6.30', '', '', '', '7.15', '', '', '', '7.30']
+            data: ['6.30', '7.3', '7.7', '7.11', '7.15', '7.19', '7.23', '7.27', '7.31', '8.3', '8.7', '8.11', '8.14', '8.18'],
           }
         ],
         yAxis: [
@@ -56,13 +56,19 @@
             name: '开始任务量',
             type: 'line',
             smooth: true,
-            data: [4, 6, 3, 4, 4, 5, 6, 3, 4]
+            data: [4, 2, 3, 4, 2, 4, 3, 5, 3, 4, 4, 5, 6, 3, 4],
+            itemStyle: { color: 'rgb(46,199,201)' },
+            areaStyle: { color: 'rgb(143, 220, 221)' },
+            lineStyle: { color: 'rgb(46,199,201)' }
           },
           {
             name: '验收任务量',
             type: 'line',
             smooth: true,
-            data: [3, 5, 3, 4, 4, 4, 6, 3, 4],
+            data: [3, 2, 2, 3, 2, 4, 3, 5, 3, 4, 4, 4, 5, 3, 4],
+            itemStyle: { color: 'rgb(90,177,139)' },
+            areaStyle: { color: 'rgb(168, 211, 242)' },
+            lineStyle: { color: 'rgb(90,177,139)' }
           },
 
         ]

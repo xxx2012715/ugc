@@ -95,7 +95,7 @@
 <style lang="stylus" scoped>
 @import '~stylus/common.styl'
 #WorkWelcome
-  width 100%
+  width 1600px
   height 360px
   display flex
   flex-direction column
@@ -123,7 +123,7 @@
       margin-right 3rem
   // 三个小栏
   .threeShow
-    width 90%
+    width 1450px
     align-self center
     display flex
     justify-content space-around
@@ -138,7 +138,7 @@
       display flex
       justify-content center
       align-items center
-      transition transform 1s ease
+      transition transform .5s ease
       .commonLf .commonRt
         width 100px
         height 90px
