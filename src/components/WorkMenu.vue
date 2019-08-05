@@ -58,14 +58,6 @@
         selectedTab: 0,
       }
     },
-    methods: {
-      // 原菜单
-      // changeTab (index) {
-      //   //   console.log(index)
-      //   this.selectedTab = index;
-      // }
-
-    }
   }
 </script>
 
