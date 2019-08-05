@@ -25,9 +25,18 @@
         tooltip: {
           trigger: 'axis'
         },
+        // 标题
         legend: {
           data: [{ name: '开始任务量', textStyle: { fontSize: '20' } }, { name: '验收任务量', textStyle: { fontSize: '20' } },]
         },
+        // 坐标系网格，可调整图片大小
+        grid: {
+          top: 50,
+          left: 20,
+          bottom: 30,
+          right: 20
+        },
+        // 小功能
         toolbox: {
           show: true,
           feature: {
@@ -39,6 +48,7 @@
           }
         },
         calculable: true,
+        // X轴单位
         xAxis: [
           {
             type: 'category',
@@ -51,6 +61,7 @@
             type: 'value'
           }
         ],
+        // 数据线
         series: [
           {
             name: '开始任务量',
