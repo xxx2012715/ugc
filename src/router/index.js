@@ -16,28 +16,28 @@ export default new Router({
       children: [
         {
           path: '/workPanel',
-          component: resolve => require(['@/pages/panel/WorkPanel'], resolve),
+          component: resolve => require(['@/pages/ProductManager/WorkPanel'], resolve),
           meta: {
             title: '工作面板板块',
           }
         },
         {
           path: '/questionPool',
-          component: resolve => require(['@/pages/panel/QuestionPool'], resolve),
+          component: resolve => require(['@/pages/ProductManager/QuestionPool'], resolve),
           meta: {
             title: '工作面板板块',
           }
         },
         {
           path: '/workForum',
-          component: resolve => require(['@/pages/panel/WorkForum'], resolve),
+          component: resolve => require(['@/pages/ProductManager/WorkForum'], resolve),
           meta: {
             title: '工作面板板块',
           }
         },
         {
           path: '/permissionApply',
-          component: resolve => require(['@/pages/panel/PermissionApply'], resolve),
+          component: resolve => require(['@/pages/ProductManager/PermissionApply'], resolve),
           meta: {
             title: '工作面板板块',
           }

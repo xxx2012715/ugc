@@ -3,12 +3,12 @@
     <div class="headEmpty"></div>
     <!-- 顶栏 -->
     <common-head></common-head>
-	<!-- 左边tab栏 -->
-	<work-menu></work-menu>
+    <!-- 左边tab栏 -->
+    <work-menu></work-menu>
     <div class="cont">
-    	<keep-alive>
-            <router-view></router-view>
-        </keep-alive>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
       <!-- 路由加载 -->
     </div>
     <div class="empty"></div>
@@ -26,7 +26,7 @@
       CommonHead,
       WorkMenu,
     },
-    
+
   }
 </script>
 

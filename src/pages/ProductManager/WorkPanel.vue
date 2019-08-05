@@ -19,11 +19,11 @@
 </template>
 <script>
 
-  import WorkWelcome from '@/pages/WorkPanel/WorkWelcome'
-  import RemainTasks from '@/pages/WorkPanel/RemainTasks'
-  import RemindTasks from '@/pages/WorkPanel/RemindTasks'
-  import WorkStatistics from '@/pages/WorkPanel/WorkStatistics'
-  import CommentsTask from '@/pages/WorkPanel/CommentsTask'
+  import WorkWelcome from '@/pages/ProductManager/WorkPanel/WorkWelcome'
+  import RemainTasks from '@/pages/ProductManager/WorkPanel/RemainTasks'
+  import RemindTasks from '@/pages/ProductManager/WorkPanel/RemindTasks'
+  import WorkStatistics from '@/pages/ProductManager/WorkPanel/WorkStatistics'
+  import CommentsTask from '@/pages/ProductManager/WorkPanel/CommentsTask'
 
   export default {
     name: "WorkPanel",
