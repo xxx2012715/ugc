@@ -6,18 +6,28 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+	{
+		path: '/',
+		component: resolve => require(['@/pages/login'],resolve),
+	},
     {
-      path: '/',
-      component: resolve => require(['@/pages/Main'], resolve),
+      path: '/main',
+      component: resolve => require(['@/components/Main'], resolve),
       children: [
         {
-          path: '/',
-          component: resolve => require(['@/pages/panel/WorkPanel'], resolve),
-          meta: {
-            title: '工作面板板块',
-          }
+			path: '/workPanel',
+			component: resolve => require(['@/pages/panel/WorkPanel'], resolve),
+			meta: {
+				title: '工作面板板块',
+			}
         },
-
+		{
+			path: '/questionPool',
+			component: resolve => require(['@/pages/questionPool'], resolve),
+			meta: {
+				title: '工作面板板块',
+			}
+        },
       ]
     },
 

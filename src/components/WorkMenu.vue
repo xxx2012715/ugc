@@ -4,15 +4,22 @@
     <span class="userName">苏宸</span>
     <span class="userPosition">产品经理</span>
     <div class="menu">
-      <div
-        v-for="(item, index) in menu"
-        :key="index"
+      <!-- <div
+        v-for="(item, i) in menu"
+        :key="i"
+        :index="item.name"
         @click="changeTab(index)"
         :class="{ selectedTab: selectedTab == index }"
       >
-        {{ item }}
-      </div>
+        {{ item.menuName }}
+      </div> -->
+      <el-menu :default-active="this.$router.path" router mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+        <el-menu-item v-for="(item,i) in menu" :key="i" :index="item.name">
+            {{item.menuName}}
+        </el-menu-item>
+    </el-menu>
     </div>
+    
   </div>
 </template>
 
@@ -23,10 +30,22 @@
       return {
         avatar: 'static/imgs/avatar.jpg',
         menu: [
-          '工作面板',
-          '问题池',
-          '论坛',
-          '申请权限'
+          {
+            name:'/workPanel',
+            menuName:'工作面板',
+          },
+          {
+            name:'/questionPool',
+            menuName:'问题池',
+          },
+          {
+            name:'',
+            menuName:'论坛',
+          },
+          {
+            name:'',
+            menuName:'申请权限',
+          },
         ],
         selectedTab: 0,
       }
