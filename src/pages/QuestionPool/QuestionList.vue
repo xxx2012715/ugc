@@ -40,9 +40,12 @@
                 </el-row>
             </el-form>
         </div>
-        <el-table :data="tableData" stripe style="width: 100%;font-size:18px" :cell-style="cellStyle">
+        <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
           <!-- 用户名 -->
           <el-table-column prop="number" label="编号" align="center">
+            <template slot-scope="scope">
+                <a @click="checkDetail()" style="cursor:pointer;color:#007aa3;">{{scope.row.number}}</a>
+            </template>
           </el-table-column>
           <!-- 名称 -->
           <el-table-column prop="name" label="名称" align="center">
@@ -114,12 +117,10 @@
       };
     },
     methods:{
-        cellStyle({row, column, rowIndex, columnIndex}){  
-            if(columnIndex === 0){//指定列号  
-                return 'color:#498fe1'  
-            }else{  
-                return ''  
-            }  
+        checkDetail(){
+            this.$router.push({
+                path: '/questionDetail'
+            })
         }
     }
   }

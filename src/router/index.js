@@ -30,6 +30,14 @@ export default new Router({
             title: '问题池',
           }
         },
+        // 问题详情
+        {
+          path: '/questionDetail',
+          component: resolve => require(['@/pages/QuestionDetail'], resolve),
+          meta: {
+            title: '问题详情',
+          }
+        },
         // 论坛
         {
           path: '/workForum',
