@@ -5,15 +5,14 @@
 </template>
 <script>
   export default {
-    name: "name",
+    name: "RemindTask",
     data () {
       return {
 
-      }
+      };
     }
   }
 </script>
 <style lang="stylus" scoped>
-#QuestionPool
-  margin-left 15%
+  
 </style>

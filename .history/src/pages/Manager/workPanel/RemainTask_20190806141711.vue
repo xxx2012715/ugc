@@ -5,7 +5,7 @@
       <span>待办任务</span>
     </div>
     <!-- 待办事项表 -->
-    <el-table :data="tableData" stripe style="width: 100%;font-size:18px;">
+    <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
       <!-- 头像 -->
       <el-table-column prop="avatar" label="" width="130" align="right">
         <template slot-scope="scope">
@@ -51,7 +51,6 @@
     name: "RemainTask",
     data () {
       return {
-        // 表格内容
         tableData: [
           {
             date: '2016-05-02',

@@ -5,7 +5,7 @@
       <span>待办任务</span>
     </div>
     <!-- 待办事项表 -->
-    <el-table :data="tableData" stripe style="width: 100%;font-size:18px;">
+    <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
       <!-- 头像 -->
       <el-table-column prop="avatar" label="" width="130" align="right">
         <template slot-scope="scope">
@@ -16,30 +16,22 @@
       <el-table-column prop="name" label="用户" width="180" align="left">
       </el-table-column>
       <!-- 日期 -->
-      <el-table-column
-        prop="permission"
-        label="申请权限"
-        width="170"
-        align="center"
-      >
+      <el-table-column prop="date" label="日期" width="170" align="center">
       </el-table-column>
       <!-- 内容 -->
-      <el-table-column prop="date" label="时间" align="center" width="520">
+      <el-table-column prop="msg" label="内容" align="center" width="520">
       </el-table-column>
       <!-- 操作 -->
       <el-table-column label="操作" align="center" width="260">
         <template slot-scope="scope">
-          <el-button
-            size="mini"
-            @click="handleEdit(scope.$index, scope.row)"
-            type="success"
-            >通过</el-button
+          <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+            >编辑</el-button
           >
           <el-button
             size="mini"
             type="danger"
             @click="handleDelete(scope.$index, scope.row)"
-            >拒绝</el-button
+            >删除</el-button
           >
         </template>
       </el-table-column>
@@ -51,47 +43,53 @@
     name: "RemainTask",
     data () {
       return {
-        // 表格内容
         tableData: [
           {
             date: '2016-05-02',
-            name: '苏宸',
-            permission: '产品经理',
+            name: '陈伟',
+            msg: '完成咯，真开心啊啊啊啊啊啊啊啊啊啊啊啊哈哈',
             task: '疗休养云',
             avatar: 'static/imgs/chenwei.jpg'
-          },
-          {
+          }, {
             date: '2016-05-04',
-            name: '陈佳美',
-            permission: '研发',
+            name: '徐凯特',
+            msg: '完成咯，真开心',
             task: '欧E办',
             avatar: 'static/imgs/kate.jpg'
-          },
-          {
+          }, {
             date: '2016-05-01',
             name: '王子威',
-            permission: '测试',
+            msg: '完成咯，真开心',
             task: '安防数据',
             avatar: 'static/imgs/ziwei.jpg'
-          },
-          {
+          }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            permission: '管理员',
+            msg: '完成咯，真开心',
             task: '沃先锋',
             avatar: 'static/imgs/avatar.jpg'
-          },
-          {
+          }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            permission: '管理员',
+            msg: '完成咯，真开心',
             task: '沃当家',
             avatar: 'static/imgs/avatar.jpg'
-          },
-          {
+          }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            permission: '管理员',
+            msg: '完成咯，真开心',
+            task: '沃当家',
+            avatar: 'static/imgs/avatar.jpg'
+          }, {
+            date: '2016-05-03',
+            name: '谢鲁圣',
+            msg: '完成咯，真开心',
+            task: '沃当家',
+            avatar: 'static/imgs/avatar.jpg'
+          }, {
+            date: '2016-05-03',
+            name: '谢鲁圣',
+            msg: '完成咯，真开心',
             task: '沃当家',
             avatar: 'static/imgs/avatar.jpg'
           }
@@ -126,13 +124,5 @@
     justify-content space-between
     align-items center
     text-indent 1rem
-  .avatar
-    width 30px
-    height 30px
-    border-radius 15px
-    transition transform 1s ease
-    .avatar:hover
-      transform scale(1.25)
-      z-index 99
 
 </style>

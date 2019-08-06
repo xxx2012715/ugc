@@ -54,27 +54,6 @@ export default new Router({
           meta: {
             title: '工作面板',
           }
-        },
-        {
-          path: 'questionPool',
-          component: resolve => require(['@/pages/ProductManager/QuestionPool'], resolve),
-          meta: {
-            title: '问题池',
-          }
-        },
-        {
-          path: 'workForum',
-          component: resolve => require(['@/pages/ProductManager/WorkForum'], resolve),
-          meta: {
-            title: '论坛',
-          }
-        },
-        {
-          path: 'permissionApply',
-          component: resolve => require(['@/pages/ProductManager/PermissionApply'], resolve),
-          meta: {
-            title: '申请权限',
-          }
         }]
     },
   ]

@@ -5,7 +5,7 @@
       <span>待办任务</span>
     </div>
     <!-- 待办事项表 -->
-    <el-table :data="tableData" stripe style="width: 100%;font-size:18px;">
+    <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
       <!-- 头像 -->
       <el-table-column prop="avatar" label="" width="130" align="right">
         <template slot-scope="scope">
@@ -51,47 +51,46 @@
     name: "RemainTask",
     data () {
       return {
-        // 表格内容
         tableData: [
           {
             date: '2016-05-02',
-            name: '苏宸',
-            permission: '产品经理',
+            name: '陈伟',
+            msg: '完成咯，真开心啊啊啊啊啊啊啊啊啊啊啊啊哈哈',
             task: '疗休养云',
             avatar: 'static/imgs/chenwei.jpg'
           },
           {
             date: '2016-05-04',
-            name: '陈佳美',
-            permission: '研发',
+            name: '徐凯特',
+            msg: '完成咯，真开心',
             task: '欧E办',
             avatar: 'static/imgs/kate.jpg'
           },
           {
             date: '2016-05-01',
             name: '王子威',
-            permission: '测试',
+            msg: '完成咯，真开心',
             task: '安防数据',
             avatar: 'static/imgs/ziwei.jpg'
           },
           {
             date: '2016-05-03',
             name: '谢鲁圣',
-            permission: '管理员',
+            msg: '完成咯，真开心',
             task: '沃先锋',
             avatar: 'static/imgs/avatar.jpg'
           },
           {
             date: '2016-05-03',
             name: '谢鲁圣',
-            permission: '管理员',
+            msg: '完成咯，真开心',
             task: '沃当家',
             avatar: 'static/imgs/avatar.jpg'
           },
           {
             date: '2016-05-03',
             name: '谢鲁圣',
-            permission: '管理员',
+            msg: '完成咯，真开心',
             task: '沃当家',
             avatar: 'static/imgs/avatar.jpg'
           }
@@ -127,10 +126,10 @@
     align-items center
     text-indent 1rem
   .avatar
-    width 30px
-    height 30px
-    border-radius 15px
-    transition transform 1s ease
+      width 30px
+      height 30px
+      border-radius 15px
+      transition transform 1s ease
     .avatar:hover
       transform scale(1.25)
       z-index 99

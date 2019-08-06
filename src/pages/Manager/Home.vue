@@ -4,7 +4,7 @@
     <!-- 顶栏 -->
     <common-head @openDialog="createQuestion"></common-head>
     <!-- 左边tab栏 -->
-    <work-menu></work-menu>
+    <manager-menu></manager-menu>
     <div class="cont">
       <!-- 路由加载 -->
       <keep-alive>
@@ -82,7 +82,7 @@
 
 <script>
   import CommonHead from '@/components/CommonHead'
-  import WorkMenu from '@/components/WorkMenu'
+  import ManagerMenu from '@/pages/Manager/ManagerMenu'
 
 
   export default {
@@ -108,7 +108,7 @@
     },
     components: {
       CommonHead,
-      WorkMenu,
+      ManagerMenu,
     },
     methods: {
       // 创建问题打开面板

@@ -43,7 +43,6 @@ export default new Router({
           }
         }]
     },
-    // 管理员
     {
       path: '/manager',
       component: resolve => require(['@/pages/Manager/Home'], resolve),
@@ -57,21 +56,21 @@ export default new Router({
         },
         {
           path: 'questionPool',
-          component: resolve => require(['@/pages/ProductManager/QuestionPool'], resolve),
+          component: resolve => require(['@/pages/Manager/QuestionPool'], resolve),
           meta: {
             title: '问题池',
           }
         },
         {
           path: 'workForum',
-          component: resolve => require(['@/pages/ProductManager/WorkForum'], resolve),
+          component: resolve => require(['@/pages/Manager/WorkForum'], resolve),
           meta: {
             title: '论坛',
           }
         },
         {
           path: 'permissionApply',
-          component: resolve => require(['@/pages/ProductManager/PermissionApply'], resolve),
+          component: resolve => require(['@/pages/Manager/PermissionApply'], resolve),
           meta: {
             title: '申请权限',
           }

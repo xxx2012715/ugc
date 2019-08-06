@@ -7,8 +7,8 @@
       <remain-task></remain-task>
       <!-- 站内用户 & 提醒事项 -->
       <div class="remain">
-        <!-- 站内用户 -->
-        <station-user></station-user>
+        <!-- 待办任务 -->
+        <remain-tasks></remain-tasks>
         <!-- 提醒事项 -->
         <remind-tasks></remind-tasks>
       </div>
@@ -18,7 +18,7 @@
 <script>
   import WorkWelcome from '@/pages/ProductManager/WorkPanel/WorkWelcome'
   import RemainTask from '@/pages/Manager/workPanel/RemainTask'
-  import StationUser from '@/pages/Manager/workPanel/StationUser'
+  import RemainTask from '@/pages/Manager/workPanel/RemainTask'
   import RemindTasks from '@/pages/Manager/workPanel/RemindTasks'
 
 
@@ -32,8 +32,6 @@
     components: {
       WorkWelcome,
       RemainTask,
-      StationUser,
-      RemindTasks
     }
   }
 </script>
@@ -49,5 +47,4 @@
     .remain
       width 1400px
       center()
-      margin 4rem 0 0 0 
 </style>

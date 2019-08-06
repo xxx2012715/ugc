@@ -49,5 +49,4 @@
     .remain
       width 1400px
       center()
-      margin 4rem 0 0 0 
 </style>

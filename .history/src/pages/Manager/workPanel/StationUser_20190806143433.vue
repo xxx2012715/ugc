@@ -1,0 +1,112 @@
+<template>
+  <div id="StationUser">
+    <!-- 顶栏 -->
+    <div class="headLine">
+      <span>站内用户</span>
+    </div>
+    <div id="main" style="width: 800px;height:400px;"></div>
+  </div>
+</template>
+<script>
+  export default {
+    name: "StationUser",
+    data () {
+      return {
+
+      }
+    },
+    mounted () {
+      // 基于准备好的dom，初始化echarts实例
+      let myChart = this.$echarts.init(document.getElementById('main'))
+
+      // 指定图表的配置项和数据
+      var option = {
+        tooltip: {
+          trigger: 'axis'
+        },
+        // 标题
+        legend: {
+          data: [{ name: '开始任务量', textStyle: { fontSize: '20' } }, { name: '验收任务量', textStyle: { fontSize: '20' } },]
+        },
+        // 坐标系网格，可调整图片大小
+        grid: {
+          top: 50,
+          left: 20,
+          bottom: 30,
+          right: 20
+        },
+        // 小功能
+        toolbox: {
+          show: true,
+          feature: {
+            mark: { show: true },
+            dataView: { show: true, readOnly: false },
+            magicType: { show: true, type: ['line', 'bar', 'stack', 'tiled'] },
+            restore: { show: true },
+            saveAsImage: { show: true },
+          }
+        },
+        calculable: true,
+        // X轴单位
+        xAxis: [
+          {
+            type: 'category',
+            boundaryGap: false,
+            data: ['6.30', '7.3', '7.7', '7.11', '7.15', '7.19', '7.23', '7.27', '7.31', '8.3', '8.7', '8.11', '8.14', '8.18'],
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ],
+        // 数据线
+        series: [
+          {
+            name: '开始任务量',
+            type: 'line',
+            smooth: true,
+            data: [4, 2, 3, 4, 2, 4, 3, 5, 3, 4, 4, 5, 6, 3, 4],
+            itemStyle: { color: 'rgb(46,199,201)' },
+            areaStyle: { color: 'rgb(143, 220, 221)' },
+            lineStyle: { color: 'rgb(46,199,201)' }
+          },
+          {
+            name: '验收任务量',
+            type: 'line',
+            smooth: true,
+            data: [3, 2, 2, 3, 2, 4, 3, 5, 3, 4, 4, 4, 5, 3, 4],
+            itemStyle: { color: 'rgb(90,177,139)' },
+            areaStyle: { color: 'rgb(168, 211, 242)' },
+            lineStyle: { color: 'rgb(90,177,139)' }
+          },
+
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    }
+  }
+</script>
+<style lang="stylus" scoped>
+#StationUser
+  width 850px
+  height 450px
+  border 1px solid lightgray
+  display flex
+  flex-direction column
+  box-shadow 5px 5px 5px gray
+  color rgb(99,98,98)
+  margin-right 5rem
+  // 顶栏
+  .headLine
+    width 100%
+    height 40px
+    background-color rgb(245,245,245)
+    display flex
+    justify-content space-between
+    align-items center
+    text-indent 1rem
+  
+</style>

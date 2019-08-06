@@ -47,7 +47,7 @@
     justify-content center
     align-items center
     .remain
-      width 1400px
+      width 1600px
       center()
       margin 4rem 0 0 0 
 </style>

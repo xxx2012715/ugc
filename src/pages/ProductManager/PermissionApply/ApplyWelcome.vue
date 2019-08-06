@@ -43,5 +43,5 @@
     .panelTit
       color blue
       cursor pointer
-  
+
 </style>
