@@ -36,7 +36,11 @@
           selected[name] = i < 6;
         }
 
-
+        return {
+          legendData: legendData,
+          seriesData: seriesData,
+          selected: selected
+        };
 
         function makeWord (max, min) {
           var nameLen = Math.ceil(Math.random() * max + min);
@@ -55,7 +59,8 @@
       // 指定图表的配置项和数据
       var option = {
         title: {
-          text: '站内用户',
+          text: '同名数量统计',
+          subtext: '纯属虚构',
           x: 'center'
         },
         tooltip: {

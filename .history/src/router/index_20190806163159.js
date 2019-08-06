@@ -16,7 +16,7 @@ export default new Router({
       children: [
         // 研发经理工作面板
         {
-          path: '/workPanel',
+          path: 'workPanel',
           component: resolve => require(['@/pages/ProductManager/WorkPanel'], resolve),
           meta: {
             title: '工作面板',
@@ -48,7 +48,7 @@ export default new Router({
         },
         // 管理员工作面板
         {
-          path: '/managerWorkPanel',
+          path: 'managerWorkPanel',
           component: resolve => require(['@/pages/Manager/WorkPanel'], resolve),
           meta: {
             title: '工作面板',

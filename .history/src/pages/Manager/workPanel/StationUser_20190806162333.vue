@@ -24,7 +24,7 @@
         var legendData = [];
         var seriesData = [];
         var selected = {};
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 50; i++) {
           name = Math.random() > 0.65
             ? makeWord(4, 1) + '·' + makeWord(3, 0)
             : makeWord(2, 1);
@@ -36,7 +36,11 @@
           selected[name] = i < 6;
         }
 
-
+        return {
+          legendData: legendData,
+          seriesData: seriesData,
+          selected: selected
+        };
 
         function makeWord (max, min) {
           var nameLen = Math.ceil(Math.random() * max + min);
@@ -55,7 +59,8 @@
       // 指定图表的配置项和数据
       var option = {
         title: {
-          text: '站内用户',
+          text: '同名数量统计',
+          subtext: '纯属虚构',
           x: 'center'
         },
         tooltip: {

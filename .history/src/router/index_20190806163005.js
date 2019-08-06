@@ -14,15 +14,13 @@ export default new Router({
       path: '/main',
       component: resolve => require(['@/components/Main'], resolve),
       children: [
-        // 研发经理工作面板
         {
-          path: '/workPanel',
+          path: 'workPanel',
           component: resolve => require(['@/pages/ProductManager/WorkPanel'], resolve),
           meta: {
             title: '工作面板',
           }
         },
-        // 问题池
         {
           path: '/questionPool',
           component: resolve => require(['@/pages/QuestionPool'], resolve),
@@ -30,7 +28,6 @@ export default new Router({
             title: '问题池',
           }
         },
-        // 论坛
         {
           path: '/workForum',
           component: resolve => require(['@/pages/WorkForum'], resolve),
@@ -38,7 +35,6 @@ export default new Router({
             title: '论坛',
           }
         },
-        // 权限申请
         {
           path: '/permissionApply',
           component: resolve => require(['@/pages/PermissionApply'], resolve),
@@ -46,9 +42,8 @@ export default new Router({
             title: '申请权限',
           }
         },
-        // 管理员工作面板
         {
-          path: '/managerWorkPanel',
+          path: 'managerWorkPanel',
           component: resolve => require(['@/pages/Manager/WorkPanel'], resolve),
           meta: {
             title: '工作面板',
