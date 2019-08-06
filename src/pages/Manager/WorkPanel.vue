@@ -30,4 +30,9 @@
 @import '~stylus/common.styl';
 #WorkPanel
   margin-left 15%
+  .content
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
 </style>
