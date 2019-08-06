@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-  import ApplyWelcome from '@/pages/PermissionApply/ApplyWelcome'
+  import ApplyWelcome from '@/pages/ProductManager/PermissionApply/ApplyWelcome'
 
   export default {
     name: "PerssionApply",

@@ -58,7 +58,54 @@
           }
         ]
         // 
-
+        title: {
+          text: '站内人员比例饼图',
+          left: 'center',
+          top: '15'
+        },
+        legend: {
+          orient: 'vertical',
+          left: '15',
+          top: '30',
+          data: ['研发人员', '测试人员', '产品经理', '管理员']
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            mark: { show: true },
+            dataView: { show: true, readOnly: false },
+            restore: { show: true },
+            saveAsImage: { show: true }
+          }
+        },
+        calculable: false,
+        series: (function () {
+          var series = [];
+          for (var i = 0; i < 30; i++) {
+            series.push({
+              name: '站内人员比例图',
+              type: 'pie',
+              itemStyle: {                normal: {
+                  label: { show: i > 28 },
+                  labelLine: { show: i > 28, length: 20 }
+                }              },
+              radius: [i * 4 + 40, i * 4 + 43],
+              data: [
+                { value: i * 64 + 160, name: '测试人员' },
+                { value: i * 32 + 320, name: '管理员' },
+                { value: i * 16 + 640, name: '产品经理' },
+                { value: i * 32 + 320, name: '研发人员' },
+              ]
+            })
+          }
+          series[0].markPoint = {
+            symbol: 'emptyCircle',
+            symbolSize: series[0].radius[0],
+            effect: { show: true, scaleSize: 12, color: 'rgba(250,225,50,0.8)', shadowBlur: 10, period: 30 },
+            data: [{ x: '50%', y: '50%' }]
+          };
+          return series;
+        })()
       };
       // 使用刚指定的配置项和数据显示图表
       myChart.setOption(option);
