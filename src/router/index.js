@@ -15,35 +15,66 @@ export default new Router({
       component: resolve => require(['@/components/Main'], resolve),
       children: [
         {
-          path: '/workPanel',
+          path: 'workPanel',
           component: resolve => require(['@/pages/ProductManager/WorkPanel'], resolve),
           meta: {
-            title: '工作面板板块',
+            title: '工作面板',
           }
         },
         {
           path: '/questionPool',
           component: resolve => require(['@/pages/ProductManager/QuestionPool'], resolve),
           meta: {
-            title: '工作面板板块',
+            title: '问题池',
           }
         },
         {
           path: '/workForum',
           component: resolve => require(['@/pages/ProductManager/WorkForum'], resolve),
           meta: {
-            title: '工作面板板块',
+            title: '论坛',
           }
         },
         {
           path: '/permissionApply',
           component: resolve => require(['@/pages/ProductManager/PermissionApply'], resolve),
           meta: {
-            title: '工作面板板块',
+            title: '申请权限',
+          }
+        }]
+    },
+    {
+      path: '/manager',
+      component: resolve => require(['@/pages/Manager/Home'], resolve),
+      children: [
+        {
+          path: 'workPanel',
+          component: resolve => require(['@/pages/Manager/WorkPanel'], resolve),
+          meta: {
+            title: '工作面板',
           }
         },
-      ]
+        {
+          path: 'questionPool',
+          component: resolve => require(['@/pages/Manager/QuestionPool'], resolve),
+          meta: {
+            title: '问题池',
+          }
+        },
+        {
+          path: 'workForum',
+          component: resolve => require(['@/pages/Manager/WorkForum'], resolve),
+          meta: {
+            title: '论坛',
+          }
+        },
+        {
+          path: 'permissionApply',
+          component: resolve => require(['@/pages/Manager/PermissionApply'], resolve),
+          meta: {
+            title: '申请权限',
+          }
+        }]
     },
-
   ]
 })

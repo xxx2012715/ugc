@@ -101,7 +101,6 @@
           developer: '',
           tester: '',
           linkQuestion: '',
-
         },
         // 标签宽度
         formLabelWidth: '120px'
@@ -121,7 +120,6 @@
         console.log('submit!');
       }
     }
-
   }
 </script>
 

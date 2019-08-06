@@ -5,7 +5,7 @@
 </template>
 <script>
   export default {
-    name: "WorkForum",
+    name: "name",
     data () {
       return {
 

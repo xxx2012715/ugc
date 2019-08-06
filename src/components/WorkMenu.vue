@@ -39,7 +39,7 @@
         avatar: 'static/imgs/avatar.jpg',
         menu: [
           {
-            name: '/workPanel',
+            name: '/main/workPanel',
             menuName: '工作面板',
           },
           {
