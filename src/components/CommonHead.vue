@@ -15,7 +15,7 @@
 
     <!-- 顶栏右侧 -->
     <div class="headRt">
-      <div class="createQues">
+      <div class="createQues" @click="openDialog">
         <i class="el-icon-circle-plus-outline quesIcon"></i>
         创建问题
       </div>
@@ -24,7 +24,7 @@
         关注列表
       </div>
       <div class="self">
-        <el-image :src="self_Url" class="selfAvatar" fit="contain"></el-image>
+        <el-image :src="selfUrl" class="selfAvatar" fit="contain"></el-image>
         <span class="userName">苏宸</span>
       </div>
     </div>
@@ -36,11 +36,17 @@
     name: 'CommonHead',
     data () {
       return {
+        // 搜索框内容
         searchInput: '',
-        self_Url: 'static/imgs/avatar.jpg'
+        // 头像地址
+        selfUrl: 'static/imgs/avatar.jpg',
       };
     },
-    methods: {}
+    methods: {
+      openDialog () {
+        this.$emit('openDialog')
+      }
+    }
   };
 </script>
 
