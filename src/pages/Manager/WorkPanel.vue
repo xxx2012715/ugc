@@ -1,11 +1,16 @@
 <template>
   <div id="WorkPanel">
     <div class="content">
-      a
+      <!-- top展示栏 -->
+      <work-welcome></work-welcome>
+      <!-- 待办事项 -->
+      <remain-task></remain-task>
     </div>
   </div>
 </template>
 <script>
+  import WorkWelcome from '@/pages/ProductManager/WorkPanel/WorkWelcome'
+  import RemainTask from '@/pages/Manager/workPanel/RemainTask'
 
 
   export default {
@@ -14,6 +19,10 @@
       return {
 
       }
+    },
+    components: {
+      WorkWelcome,
+      RemainTask,
     }
   }
 </script>
