@@ -5,13 +5,13 @@
     </div>
     <div class="cont">
       <el-table :data="tableData" height="200" style="width: 100%">
-        <el-table-column prop="avatar" label="" width="130" align="right">
+        <el-table-column prop="date" label="申请时间" width="300"></el-table-column>
+        <el-table-column prop="type" label="权限类型" width="300"></el-table-column>
+                <el-table-column prop="avatar" label="" width="130" align="right">
             <template slot-scope="scope">
               <img :src="scope.row.avatar" class="avatar" />
             </template>
           </el-table-column>
-        <el-table-column prop="date" label="申请时间" width="300"></el-table-column>
-        <el-table-column prop="type" label="权限类型" width="300"></el-table-column>
         <el-table-column prop="admin" label="经办管理员" width="300"></el-table-column>
         <el-table-column prop="state" label="状态" width="300"></el-table-column>
       </el-table>
