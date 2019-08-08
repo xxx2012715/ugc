@@ -7,6 +7,11 @@
       <el-table :data="tableData" height="200" style="width: 100%">
         <el-table-column prop="date" label="申请时间" width="300"></el-table-column>
         <el-table-column prop="type" label="权限类型" width="300"></el-table-column>
+                <el-table-column prop="avatar" label="" width="130" align="right">
+            <template slot-scope="scope">
+              <img :src="scope.row.avatar" class="avatar" />
+            </template>
+          </el-table-column>
         <el-table-column prop="admin" label="经办管理员" width="300"></el-table-column>
         <el-table-column prop="state" label="状态" width="300"></el-table-column>
       </el-table>
@@ -23,25 +28,29 @@ export default {
           date: "2019-7-31",
           type: "测试",
           admin: "陈伟",
-          state: "申请成功"
+          state: "申请成功",
+          avatar: "static/imgs/chenwei.jpg"
         },
         {
           date: "2019-7-26",
           type: "管理员",
           admin: "陈伟",
-          state: "申请失败"
+          state: "申请失败",
+          avatar: "static/imgs/chenwei.jpg"
         },
         {
           date: "2019-7-26",
           type: "产品经理",
           admin: "徐凯特",
-          state: "申请中"
+          state: "申请中",
+          avatar: "static/imgs/chenwei.jpg"
         },
         {
           date: "2019-7-26",
           type: "管理员",
           admin: "吴萍萍",
-          state: "申请成功"
+          state: "申请成功",
+          avatar: "static/imgs/chenwei.jpg"
         }
       ]
     };
@@ -53,7 +62,7 @@ export default {
 @import url('//unpkg.com/element-ui@2.11.0/lib/theme-chalk/index.css');
 @import '~stylus/common.styl';
 
-#CurrentPermission {
+#CurrentPermission 
   width: 1508px;
   height: 400px;
   border: 1px solid lightgray;
@@ -77,7 +86,7 @@ export default {
     }
   }
 
-  .cont {
+  .cont 
     height: 300px;
     margin-top: 1.5rem;
     margin-left: 100px;
@@ -85,7 +94,13 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-  }
-}
+    .avatar
+      width 30px
+      height 30px
+      border-radius 15px
+      transition transform 1s ease
+    .avatar:hover
+      transform scale(1.25)
+      z-index 99
 </style>
 

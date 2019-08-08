@@ -62,7 +62,18 @@ export default new Router({
             title: '工作面板',
           }
         },
+<<<<<<< HEAD
 
+=======
+        // 研发工作面板
+        {
+          path: '/ProgrammerWorkPanel',
+          component: resolve => require(['@/pages/Programmer/WorkPanel'], resolve),
+          meta: {
+            title: '工作面板',
+          }
+        },
+>>>>>>> b9dd33ad2aa54b8e6289859fc9c106e78de84802
       ]
     },
   ]
