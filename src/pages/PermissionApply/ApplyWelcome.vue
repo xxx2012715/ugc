@@ -25,7 +25,7 @@
 @import '~stylus/common.styl'
 #ApplyWelcome
   width 1600px
-  height 360px
+  height 100px
   display flex
   flex-direction column
   // 顶边栏
