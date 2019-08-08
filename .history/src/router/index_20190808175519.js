@@ -70,14 +70,6 @@ export default new Router({
             title: '工作面板',
           }
         },
-        // 论坛详细页面
-        {
-          path: '/forumDetails',
-          component: resolve => require(['@/pages/Forum/ForumDetails'], resolve),
-          meta: {
-            title: '论坛详情',
-          }
-        },
       ]
     },
   ]

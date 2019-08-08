@@ -73,7 +73,7 @@ export default new Router({
         // 论坛详细页面
         {
           path: '/forumDetails',
-          component: resolve => require(['@/pages/Forum/ForumDetails'], resolve),
+          component: resolve => require(['@/pages/ForumDetails'], resolve),
           meta: {
             title: '论坛详情',
           }
