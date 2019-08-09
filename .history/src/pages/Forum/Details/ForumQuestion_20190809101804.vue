@@ -120,6 +120,7 @@
 @import '~stylus/common.styl'
 #ForumQuestion
   width 900px
+  border 1px solid black
   margin-right 3rem
   display flex
   flex-direction column
@@ -164,7 +165,6 @@
   // 评论部分
   .comments
     // 头部
-    margin 2rem 0
     .headSum
       flex-between()
       width 100%

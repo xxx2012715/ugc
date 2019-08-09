@@ -22,7 +22,6 @@
 
 <style lang="stylus" scoped>
 #ForumDetails
-  margin-top 2rem
   margin-left 15%
   width 1600px
   display flex

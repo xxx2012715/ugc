@@ -84,23 +84,7 @@
             userPosi: '研发人员',
             commentsNum: '9',
             praiseNum: '21',
-            comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
-          },
-          {
-            avatar: 'static/imgs/kate.jpg',
-            userName: '徐凯特',
-            userPosi: '研发人员',
-            commentsNum: '9',
-            praiseNum: '21',
-            comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
-          },
-          {
-            avatar: 'static/imgs/kate.jpg',
-            userName: '徐凯特',
-            userPosi: '研发人员',
-            commentsNum: '9',
-            praiseNum: '21',
-            comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
+            commengts: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
           }
         ]
       }
@@ -120,16 +104,16 @@
 @import '~stylus/common.styl'
 #ForumQuestion
   width 900px
+  border 1px solid black
   margin-right 3rem
   display flex
   flex-direction column
   // 问题及描述
   .question
     width 100%
-    max-height 280px
+    height 280px
     display flex
     flex-direction column
-    overflow auto
     // 问题标题
     .quesTitle
       width 85%
@@ -154,8 +138,8 @@
       line-height 22px
       width 100%
       height 110px
+      overflow auto
       text-indent 2rem
-      overflow hidden
     // 按钮
     .button
       margin-top 1rem
@@ -164,7 +148,6 @@
   // 评论部分
   .comments
     // 头部
-    margin 2rem 0
     .headSum
       flex-between()
       width 100%
@@ -177,7 +160,7 @@
     // 内容
     .cont
       .li
-        margin 3rem 0
+        margin 1rem 0
         // 用户信息
         .userInfo
           display flex
@@ -192,20 +175,6 @@
               .userName
                 font-size 24px
                 color black
-        // 评论内容
-        .comments
-          max-height 120px
-          line-height 24px
-          font-size 18px
-          text-indent 2rem
-          overflow auto
-          margin .5rem 0
-        // 按钮
-        .praise
-          display flex
-          .commentsBtn
-            width 450px
-            height 40px
 
 
 

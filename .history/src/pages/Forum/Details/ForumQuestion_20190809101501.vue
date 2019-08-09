@@ -85,22 +85,6 @@
             commentsNum: '9',
             praiseNum: '21',
             comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
-          },
-          {
-            avatar: 'static/imgs/kate.jpg',
-            userName: '徐凯特',
-            userPosi: '研发人员',
-            commentsNum: '9',
-            praiseNum: '21',
-            comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
-          },
-          {
-            avatar: 'static/imgs/kate.jpg',
-            userName: '徐凯特',
-            userPosi: '研发人员',
-            commentsNum: '9',
-            praiseNum: '21',
-            comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
           }
         ]
       }
@@ -120,6 +104,7 @@
 @import '~stylus/common.styl'
 #ForumQuestion
   width 900px
+  border 1px solid black
   margin-right 3rem
   display flex
   flex-direction column
@@ -164,7 +149,6 @@
   // 评论部分
   .comments
     // 头部
-    margin 2rem 0
     .headSum
       flex-between()
       width 100%
@@ -192,7 +176,6 @@
               .userName
                 font-size 24px
                 color black
-        // 评论内容
         .comments
           max-height 120px
           line-height 24px
@@ -200,12 +183,6 @@
           text-indent 2rem
           overflow auto
           margin .5rem 0
-        // 按钮
-        .praise
-          display flex
-          .commentsBtn
-            width 450px
-            height 40px
 
 
 

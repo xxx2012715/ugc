@@ -120,6 +120,7 @@
 @import '~stylus/common.styl'
 #ForumQuestion
   width 900px
+  border 1px solid black
   margin-right 3rem
   display flex
   flex-direction column
