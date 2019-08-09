@@ -11,23 +11,11 @@
           待开发
         </span>
         <!-- 评论显示表格 -->
-        <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
+        <el-table :data="tableData" stripe style="width: 100%;font-size:18px" class="showTable">
           <!-- 编号 -->
-          <el-table-column
-            prop="no"
-            label="编号"
-            width="200"
-            align="left"
-            class="blue"
-          ></el-table-column>
+          <el-table-column prop="no" label="编号" width="200" align="left" class="blue"></el-table-column>
           <!-- 优先级 -->
-          <el-table-column
-            prop="pior"
-            label="优先级"
-            width="200"
-            align="center"
-            class="red"
-          >
+          <el-table-column prop="pior" label="优先级" width="200" align="center" class="Pr">
             <i class="el-icon-top"></i>
             <i class="el-icon-top"></i>
           </el-table-column>
@@ -38,12 +26,7 @@
             </template>
           </el-table-column>
           <!-- 测试人员 -->
-          <el-table-column
-            prop="tester"
-            label="测试人员"
-            align="left"
-            width="150"
-          ></el-table-column>
+          <el-table-column prop="tester" label="测试人员" align="left" width="150"></el-table-column>
           <!-- 产品头像 -->
           <el-table-column prop="avatarPM" label width="250" align="right">
             <template slot-scope="scope">
@@ -51,12 +34,7 @@
             </template>
           </el-table-column>
           <!-- 产品经理 -->
-          <el-table-column
-            prop="pm"
-            label="产品经理"
-            align="left"
-            width="150"
-          ></el-table-column>
+          <el-table-column prop="pm" label="产品经理" align="left" width="150"></el-table-column>
         </el-table>
       </el-tab-pane>
 
@@ -69,47 +47,30 @@
           开发中
         </span>
         <!-- 任务显示表格--暂时copy评论面板 -->
-        <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
+        <el-table :data="tableData" stripe style="width: 100%;font-size:18px" class="showTable">
           <!-- 编号 -->
-          <el-table-column
-            prop="no"
-            label="编号"
-            width="180"
-            align="left"
-          ></el-table-column>
+          <el-table-column prop="no" label="编号" width="200" align="left" class="blue"></el-table-column>
           <!-- 优先级 -->
-          <el-table-column
-            prop="pior"
-            label="优先级"
-            width="170"
-            align="center"
-          ></el-table-column>
+          <el-table-column prop="pior" label="优先级" width="200" align="center" class="red">
+            <i class="el-icon-top"></i>
+            <i class="el-icon-top"></i>
+          </el-table-column>
           <!-- 测试头像 -->
-          <el-table-column prop="avatar" label width="130" align="right">
+          <el-table-column prop="avatarTester" label width="250" align="right">
             <template slot-scope="scope">
-              <img :src="scope.row.avatar" class="avatar" />
+              <img :src="scope.row.avatarTester" class="avatar" />
             </template>
           </el-table-column>
           <!-- 测试人员 -->
-          <el-table-column
-            prop="tester"
-            label="测试人员"
-            align="center"
-            width="520"
-          ></el-table-column>
+          <el-table-column prop="tester" label="测试人员" align="left" width="150"></el-table-column>
           <!-- 产品头像 -->
-          <el-table-column prop="avatar" label width="130" align="right">
+          <el-table-column prop="avatarPM" label width="250" align="right">
             <template slot-scope="scope">
-              <img :src="scope.row.avatar" class="avatar" />
+              <img :src="scope.row.avatarPM" class="avatar" />
             </template>
           </el-table-column>
           <!-- 产品经理 -->
-          <el-table-column
-            prop="pm"
-            label="产品经理"
-            align="center"
-            width="520"
-          ></el-table-column>
+          <el-table-column prop="pm" label="产品经理" align="left" width="150"></el-table-column>
         </el-table>
       </el-tab-pane>
 
@@ -122,47 +83,30 @@
           测试中
         </span>
         <!-- 任务显示表格--暂时copy评论面板 -->
-        <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
+        <el-table :data="tableData" stripe style="width: 100%;font-size:18px" class="showTable">
           <!-- 编号 -->
-          <el-table-column
-            prop="no"
-            label="编号"
-            width="180"
-            align="left"
-          ></el-table-column>
+          <el-table-column prop="no" label="编号" width="200" align="left" class="blue"></el-table-column>
           <!-- 优先级 -->
-          <el-table-column
-            prop="pior"
-            label="优先级"
-            width="170"
-            align="center"
-          ></el-table-column>
+          <el-table-column prop="pior" label="优先级" width="200" align="center" class="red">
+            <i class="el-icon-top"></i>
+            <i class="el-icon-top"></i>
+          </el-table-column>
           <!-- 测试头像 -->
-          <el-table-column prop="avatarTester" label width="130" align="right">
+          <el-table-column prop="avatarTester" label width="250" align="right">
             <template slot-scope="scope">
-              <img :src="scope.row.avatar" class="avatar" />
+              <img :src="scope.row.avatarTester" class="avatar" />
             </template>
           </el-table-column>
           <!-- 测试人员 -->
-          <el-table-column
-            prop="tester"
-            label="测试人员"
-            align="center"
-            width="520"
-          ></el-table-column>
+          <el-table-column prop="tester" label="测试人员" align="left" width="150"></el-table-column>
           <!-- 产品头像 -->
-          <el-table-column prop="avatarPM" label width="130" align="right">
+          <el-table-column prop="avatarPM" label width="250" align="right">
             <template slot-scope="scope">
-              <img :src="scope.row.avatar" class="avatar" />
+              <img :src="scope.row.avatarPM" class="avatar" />
             </template>
           </el-table-column>
           <!-- 产品经理 -->
-          <el-table-column
-            prop="pm"
-            label="产品经理"
-            align="center"
-            width="520"
-          ></el-table-column>
+          <el-table-column prop="pm" label="产品经理" align="left" width="150"></el-table-column>
         </el-table>
       </el-tab-pane>
 
@@ -174,49 +118,30 @@
           待上线
         </span>
         <!-- 任务显示表格--暂时copy评论面板 -->
-        <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
-          <!-- 头像 -->
-
+        <el-table :data="tableData" stripe style="width: 100%;font-size:18px" class="showTable">
           <!-- 编号 -->
-          <el-table-column
-            prop="no"
-            label="编号"
-            width="180"
-            align="left"
-          ></el-table-column>
+          <el-table-column prop="no" label="编号" width="200" align="left" class="blue"></el-table-column>
           <!-- 优先级 -->
-          <el-table-column
-            prop="pior"
-            label="优先级"
-            width="170"
-            align="center"
-          ></el-table-column>
+          <el-table-column prop="pior" label="优先级" width="200" align="center" class="red">
+            <i class="el-icon-top"></i>
+            <i class="el-icon-top"></i>
+          </el-table-column>
           <!-- 测试头像 -->
-          <el-table-column prop="avatarTester" label width="130" align="right">
+          <el-table-column prop="avatarTester" label width="250" align="right">
             <template slot-scope="scope">
               <img :src="scope.row.avatarTester" class="avatar" />
             </template>
           </el-table-column>
           <!-- 测试人员 -->
-          <el-table-column
-            prop="tester"
-            label="测试人员"
-            align="center"
-            width="520"
-          ></el-table-column>
+          <el-table-column prop="tester" label="测试人员" align="left" width="150"></el-table-column>
           <!-- 产品头像 -->
-          <el-table-column prop="avatarPM" label width="130" align="right">
+          <el-table-column prop="avatarPM" label width="250" align="right">
             <template slot-scope="scope">
               <img :src="scope.row.avatarPM" class="avatar" />
             </template>
           </el-table-column>
           <!-- 产品经理 -->
-          <el-table-column
-            prop="pm"
-            label="产品经理"
-            align="center"
-            width="520"
-          ></el-table-column>
+          <el-table-column prop="pm" label="产品经理" align="left" width="150"></el-table-column>
         </el-table>
       </el-tab-pane>
     </el-tabs>
@@ -224,37 +149,85 @@
 </template>
 
 <script>
-  export default {
-    name: "CommentsTask",
-    data () {
-      return {
-        tableData: [
-          {
-            no: "IP-007",
-            pior: "陈伟",
-            tester: "陈伟",
-            pm: "徐凯特",
-            avatarTester: "static/imgs/chenwei.jpg",
-            avatarPM: "static/imgs/kate.jpg"
-          },
-          {
-            no: "IP-007",
-            pior: "陈伟",
-            tester: "陈伟",
-            pm: "徐凯特",
-            avatarTester: "static/imgs/chenwei.jpg",
-            avatarPM: "static/imgs/kate.jpg"
-          }
-        ]
-      };
-    }
-  };
+export default {
+  name: "CommentsTask",
+  data() {
+    return {
+      tableData: [
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        },
+        {
+          no: "IP-007",
+          pior: "陈伟",
+          tester: "陈伟",
+          pm: "徐凯特",
+          avatarTester: "static/imgs/chenwei.jpg",
+          avatarPM: "static/imgs/kate.jpg"
+        }
+      ]
+    };
+  }
+};
 </script>
 <style lang="stylus" scoped>
 #Details {
   margin-top: 2rem;
   color: rgb(99, 98, 98);
-  margin-left 160px
+  margin-left: 160px;
 
   .tabs {
     width: 1300px;
@@ -264,12 +237,16 @@
       font-size: 20px;
     }
 
-    .red{
-      color:rgb(225,0,0)
+    .showTable{
+      margin-left:30px;
     }
 
-    .blue{
-      color rgb(73,143,255);
+    .Pr {
+      color: rgb(225, 0, 0);
+    }
+
+    .blue {
+      color: rgb(73, 143, 255);
     }
 
     .avatar {
