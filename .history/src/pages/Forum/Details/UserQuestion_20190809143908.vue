@@ -90,6 +90,7 @@
 #UserQuestion
   width 450px
   height 800px
+  border 1px solid black
   font-size 16px
   color rgb(79,79,79)
 
@@ -129,6 +130,7 @@
   .popularQues
     width 416px
     height 400px
+    border 1px solid black
     margin-top 2rem
     padding 1rem 1rem
     // 顶栏

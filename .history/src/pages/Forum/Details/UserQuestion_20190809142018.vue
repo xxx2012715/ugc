@@ -28,15 +28,15 @@
       <!-- 热门问题列表 -->
       <div class="questionList">
         <!-- 每一项 -->
-        <div class="quesLi" v-for="(item, index) in quesList" :key="index">
+        <div class="quesLi" v-for="(item,index) in quesList" :key="index">
           <!-- 热门问题标题 -->
-          <span class="quesTitle">{{ item.msg }}</span>
+          <span class="quesTitle">{{item.msg}}</span>
           <!-- 图标 -->
           <div class="quesIcon">
-            <span class="iconfont browers">&#xe679;</span>
-            <span class="browersNum">{{ item.browersNum }}</span>
-            <span class="iconfont comments">&#xe601;</span>
-            <span class="browersNum">{{ item.commentsNum }}</span>
+            <span class="iconfont browers"></span>
+            <span class="browersNum">{{item.browersNum}}</span>
+            <span class="iconfont comments"></span> 
+            <span class="browersNum">{{item.commentsNum}</span>
           </div>
         </div>
       </div>
@@ -54,11 +54,6 @@
         questionerAvatar: 'static/imgs/avatar.jpg',
         quesList: [
           {
-            msg: '安卓手机端页面自适应大家是怎么解决的？解决的？页面自适应大家是怎么解决的？页面自适',
-            browersNum: 21,
-            commentsNum: 20
-          },
-          {
             msg: '安卓手机端页面自适应大家是怎么解决的？',
             browersNum: 21,
             commentsNum: 20
@@ -74,7 +69,12 @@
             commentsNum: 20
           },
           {
-            msg: '安卓手机端页面自适应大家是怎么解决的？页面自适应大家是怎么解决的？页面自适应大家是怎么解决的？',
+            msg: '安卓手机端页面自适应大家是怎么解决的？',
+            browersNum: 21,
+            commentsNum: 20
+          },
+          {
+            msg: '安卓手机端页面自适应大家是怎么解决的？',
             browersNum: 21,
             commentsNum: 20
           },
@@ -90,9 +90,8 @@
 #UserQuestion
   width 450px
   height 800px
+  border 1px solid black
   font-size 16px
-  color rgb(79,79,79)
-
   // 提问人信息
   .questioner
     width 450px
@@ -125,35 +124,16 @@
       span
         ellipsis()
         margin 2px 0
-  // 热门问题
   .popularQues
     width 416px
     height 400px
+    border 1px solid black
     margin-top 2rem
     padding 1rem 1rem
-    // 顶栏
     .popuTit
       font-size 18px
       font-weight bold
-    // 热门问题列表
-    .questionList
-      margin-top 1rem
-      .quesLi
-        height 40px
-        display flex
-        flex-direction column
-        justify-content space-between
-        margin 1.5rem 0
-        .quesTitle
-          color rgb(92,154,228)
-          text-indent 2rem
-          ellipsis()
-          width 380px
-        .quesIcon
-          text-indent 2rem
-          color gray
-          .comments
-            margin-left 1rem
+      margin-bottom 1rem
 
 
 </style>

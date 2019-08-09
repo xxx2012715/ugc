@@ -54,11 +54,6 @@
         questionerAvatar: 'static/imgs/avatar.jpg',
         quesList: [
           {
-            msg: '安卓手机端页面自适应大家是怎么解决的？解决的？页面自适应大家是怎么解决的？页面自适',
-            browersNum: 21,
-            commentsNum: 20
-          },
-          {
             msg: '安卓手机端页面自适应大家是怎么解决的？',
             browersNum: 21,
             commentsNum: 20
@@ -74,7 +69,12 @@
             commentsNum: 20
           },
           {
-            msg: '安卓手机端页面自适应大家是怎么解决的？页面自适应大家是怎么解决的？页面自适应大家是怎么解决的？',
+            msg: '安卓手机端页面自适应大家是怎么解决的？',
+            browersNum: 21,
+            commentsNum: 20
+          },
+          {
+            msg: '安卓手机端页面自适应大家是怎么解决的？',
             browersNum: 21,
             commentsNum: 20
           },
@@ -90,6 +90,7 @@
 #UserQuestion
   width 450px
   height 800px
+  border 1px solid black
   font-size 16px
   color rgb(79,79,79)
 
@@ -129,6 +130,7 @@
   .popularQues
     width 416px
     height 400px
+    border 1px solid black
     margin-top 2rem
     padding 1rem 1rem
     // 顶栏
@@ -146,14 +148,5 @@
         margin 1.5rem 0
         .quesTitle
           color rgb(92,154,228)
-          text-indent 2rem
-          ellipsis()
-          width 380px
-        .quesIcon
-          text-indent 2rem
-          color gray
-          .comments
-            margin-left 1rem
-
 
 </style>
