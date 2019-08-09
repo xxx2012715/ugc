@@ -3,6 +3,7 @@
         <div class="content">
             <StateType></StateType>
             <Details></Details>
+            <CommentsTask class="comment"></CommentsTask>
         </div>
     </div>
 </template>
@@ -10,6 +11,7 @@
 <script>
 import StateType from '@/pages/Programmer/WorkPanel/StateType'
 import Details from '@/pages/Programmer/WorkPanel/Details'
+import CommentsTask from '@/pages/ProductManager/WorkPanel/CommentsTask'
   export default {
     name: "WorkPanel",
     data () {
@@ -19,7 +21,8 @@ import Details from '@/pages/Programmer/WorkPanel/Details'
     },
     components: {
         StateType,
-        Details
+        Details,
+        CommentsTask
     }
   }
 </script>
@@ -27,5 +30,8 @@ import Details from '@/pages/Programmer/WorkPanel/Details'
 @import '~stylus/common.styl'
 #WorkPanel
   margin-left 15%
+  .comment
+    margin-left 160px
+    margin-top 6rem
 </style>
 
