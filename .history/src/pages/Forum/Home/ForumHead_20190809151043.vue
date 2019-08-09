@@ -46,8 +46,7 @@
         </el-form>
       </div>
       <!-- 个人信息 -->
-      <el-card class="selfInfo">
-        <!-- 用户信息 -->
+      <div class="selfInfo">
         <div class="userInfo">
           <el-image class="image" :src="quesAvatar"></el-image>
           <span class="user">苏宸</span>
@@ -57,7 +56,7 @@
           <span class="quesNum">问题量: &nbsp;77</span>
           <span class="praiseNum">被赞数: &nbsp;99</span>
         </div>
-      </el-card>
+      </div>
     </div>
   </div>
 </template>
@@ -132,23 +131,14 @@
       border 1px solid lightgray
       border-radius 26px
       flex-direction column
-      // 自身
-      align-self flex-start
       center()
       margin-left 7.5rem
-      // background-color #FFF3E6
-      .userInfo
-        flex-center()
-        flex-direction column
-        font-size 24px
-        margin-bottom 1rem
-        .image
-          width 160px
-          height 160px
-          border-radius 80px
-          margin-bottom .2rem
-        .user
-          margin .2rem 0
+      background-color #FFF3E6
+      .image
+        width 160px
+        height 160px
+        border-radius 80px
+        margin-bottom 3rem
       .info
         width 250px
         flex-between()

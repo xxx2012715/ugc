@@ -46,7 +46,7 @@
         </el-form>
       </div>
       <!-- 个人信息 -->
-      <el-card class="selfInfo">
+      <div class="selfInfo">
         <!-- 用户信息 -->
         <div class="userInfo">
           <el-image class="image" :src="quesAvatar"></el-image>
@@ -57,7 +57,7 @@
           <span class="quesNum">问题量: &nbsp;77</span>
           <span class="praiseNum">被赞数: &nbsp;99</span>
         </div>
-      </el-card>
+      </div>
     </div>
   </div>
 </template>
