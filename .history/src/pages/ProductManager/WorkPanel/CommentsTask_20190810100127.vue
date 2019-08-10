@@ -41,12 +41,12 @@
         </el-table>
       </el-tab-pane>
 
-      <!-- 进程栏 -->
+      <!-- 任务栏 -->
       <el-tab-pane label="任务中心">
         <!-- tab -->
         <span slot="label" class="commonTab">
           <i class="el-icon-loading"></i>
-          进程中心
+          任务中心
         </span>
         <!-- 任务显示表格--暂时copy评论面板 -->
         <el-table :data="processData" stripe style="width: 100%;font-size:18px">
@@ -64,7 +64,7 @@
           </el-table-column>
           <!-- 内容 -->
           <el-table-column
-            prop="opt"
+            prop="msg"
             label="操作记录"
             align="center"
             width="520"
@@ -138,49 +138,49 @@
           {
             date: '2016-05-02',
             name: '陈伟',
-            opt: '项目启动',
+            msg: '谢鲁圣在2019/7/31开始了ip-017',
             task: 'IP-007',
             avatar: 'static/imgs/chenwei.jpg'
           }, {
             date: '2016-05-04',
             name: '徐凯特',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/kate.jpg'
           }, {
             date: '2016-05-01',
             name: '王子威',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/ziwei.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            msg: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }

@@ -138,49 +138,49 @@
           {
             date: '2016-05-02',
             name: '陈伟',
-            opt: '项目启动',
+            opt: '谢鲁圣在2019/7/31开始了ip-017',
             task: 'IP-007',
             avatar: 'static/imgs/chenwei.jpg'
           }, {
             date: '2016-05-04',
             name: '徐凯特',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/kate.jpg'
           }, {
             date: '2016-05-01',
             name: '王子威',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/ziwei.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '陈伟在2019/8/3研发完成了ip-018',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }

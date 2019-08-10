@@ -41,37 +41,37 @@
         </el-table>
       </el-tab-pane>
 
-      <!-- 进程栏 -->
-      <el-tab-pane label="任务中心">
+      <!-- 任务栏 -->
+      <el-tab-pane label="进程中心">
         <!-- tab -->
         <span slot="label" class="commonTab">
           <i class="el-icon-loading"></i>
-          进程中心
+          任务中心
         </span>
         <!-- 任务显示表格--暂时copy评论面板 -->
         <el-table :data="processData" stripe style="width: 100%;font-size:18px">
           <!-- 头像 -->
-          <el-table-column prop="avatar" label="" width="130" align="right">
+          <el-table-column prop="avatar" label="" width="150" align="right">
             <template slot-scope="scope">
               <img :src="scope.row.avatar" class="avatar" />
             </template>
           </el-table-column>
           <!-- 用户名 -->
-          <el-table-column prop="name" label="用户" width="180" align="left">
+          <el-table-column prop="name" label="用户" width="200" align="left">
           </el-table-column>
           <!-- 日期 -->
-          <el-table-column prop="date" label="日期" width="170" align="center">
+          <el-table-column prop="date" label="日期" width="300" align="center">
           </el-table-column>
           <!-- 内容 -->
           <el-table-column
             prop="opt"
             label="操作记录"
             align="center"
-            width="520"
+            width="300"
           >
           </el-table-column>
           <!-- 操作 -->
-          <el-table-column prop="task" label="任务" align="center" width="260">
+          <el-table-column prop="task" label="任务" align="center" width="300">
           </el-table-column>
         </el-table>
       </el-tab-pane>
@@ -138,49 +138,49 @@
           {
             date: '2016-05-02',
             name: '陈伟',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/chenwei.jpg'
           }, {
             date: '2016-05-04',
             name: '徐凯特',
-            opt: '项目启动',
+            opt: '完成',
             task: 'IP-007',
             avatar: 'static/imgs/kate.jpg'
           }, {
             date: '2016-05-01',
             name: '王子威',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/ziwei.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }, {
             date: '2016-05-03',
             name: '谢鲁圣',
-            opt: '项目启动',
+            opt: '启动',
             task: 'IP-007',
             avatar: 'static/imgs/avatar.jpg'
           }
