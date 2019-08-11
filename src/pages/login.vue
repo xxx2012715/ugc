@@ -45,12 +45,15 @@
       submitForm () {
         // 获取登录地址
         let url = '/doLogin?usrName=' + this.usrName + '&passWord=' + this.usrPwd;
+        // let url = '/doLogin?usrName=waichan&passWord=123456';
+
         // 请求登录
         this.postRequest(url)
           .then((res) => {
             // console.log(data);
             // 若登录成功
             let data = res.data;
+            console.log(data)
             if (data.isSuccess) {
               // 用户类型存储
               localStorage.setItem('userType', data.roleId);
@@ -84,7 +87,7 @@
             }
           })
           .catch((error) => {
-            alert(error);
+            console.log(error);
           });
       },
     }

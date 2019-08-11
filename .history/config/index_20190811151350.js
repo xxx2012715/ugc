@@ -13,7 +13,7 @@ module.exports = {
     // 跨域
     proxyTable: {
       '/api': {
-        target: 'http://172.20.10.11:8080',
+        target: 'http://172.20.10.2:8080',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'
