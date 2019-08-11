@@ -66,7 +66,7 @@
               <el-col :span="19"><hr></el-col>
             </el-row>
             <el-row>
-              <el-col :offset="2"><a style="color:blue">IP-001 移动端ios手机营业厅bug</a></el-col>
+              <el-col :offset="2"><a style="color:blue">IP-007 移动端ios手机营业厅bug</a></el-col>
             </el-row>
           </section>
           <!-- 附件 -->
@@ -140,7 +140,7 @@
       </div>
     </div>
     <div class="comment">
-      <comments-task></comments-task>
+      <single-question></single-question>
     </div>
     <!-- 评论弹窗 -->
     <el-dialog title="评论" :visible.sync="commentVisible" width="40%">
@@ -158,7 +158,7 @@
 </template>
 
 <script>
-  import CommentsTask from '@/pages/ProductManager/WorkPanel/CommentsTask'
+  import SingleQuestion from '@/pages/QuestionPool/SingleQuestion'
   export default {
     name: 'QuestionOperation',
     data () {
@@ -167,7 +167,7 @@
       }
     },
     components: {
-      CommentsTask,
+      SingleQuestion,
     },
     methods: {
       comment(){

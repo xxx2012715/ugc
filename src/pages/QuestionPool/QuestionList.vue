@@ -40,27 +40,27 @@
                 </el-row>
             </el-form>
         </div>
-        <el-table :data="tableData" stripe style="width: 100%;font-size:18px">
+        <el-table :data="tableData" stripe style="width: 98%;font-size:18px;margin-left:1%">
           <!-- 用户名 -->
-          <el-table-column prop="number" label="编号" align="center">
+          <el-table-column prop="number" label="编号" width="240" align="center">
             <template slot-scope="scope">
                 <a @click="checkDetail()" style="cursor:pointer;color:#007aa3;">{{scope.row.number}}</a>
             </template>
           </el-table-column>
           <!-- 名称 -->
-          <el-table-column prop="name" label="名称" align="center">
+          <el-table-column prop="name" label="名称" width="280" align="center">
           </el-table-column>
           <!-- 类型 -->
-          <el-table-column prop="type" label="类型" align="center">
+          <el-table-column prop="type" label="类型" width="320" align="center">
                <template slot-scope="scope">
                    <div style="color:#fff;width:145px;height:28px;background:#007aa3;border-radius:15px;margin:0 auto;">{{scope.row.type}}</div>
                </template>
           </el-table-column>
           <!-- 创建人 -->
-          <el-table-column prop="person" label="创建人" align="center">
+          <el-table-column prop="person" label="创建人" width="220" align="center">
           </el-table-column>
           <!-- 时间 -->
-          <el-table-column prop="date" label="时间" align="center">
+          <el-table-column prop="date" label="时间" width="410" align="center">
           </el-table-column>
         </el-table>
         <!-- 分页器 -->
