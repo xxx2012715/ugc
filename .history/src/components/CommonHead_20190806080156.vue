@@ -23,7 +23,7 @@
         <i class="el-icon-star-off quesIcon"></i>
         关注列表
       </div>
-      <div class="self" @click="logOut">
+      <div class="self">
         <el-image :src="selfUrl" class="selfAvatar" fit="contain"></el-image>
         <span class="userName">苏宸</span>
       </div>
@@ -45,13 +45,6 @@
     methods: {
       openDialog () {
         this.$emit('openDialog')
-      },
-      logOut () {
-        // 清除缓存 & 返回登录页面
-        localStorage.clear();
-        this.$router.push({
-          path: '/'
-        })
       }
     }
   };

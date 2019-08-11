@@ -50,7 +50,7 @@
         // 清除缓存 & 返回登录页面
         localStorage.clear();
         this.$router.push({
-          path: '/'
+          path: '/ProgrammerWorkPanel'
         })
       }
     }

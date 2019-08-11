@@ -52,17 +52,34 @@
             // 若登录成功
             let data = res.data;
             if (data.isSuccess) {
+              // 用户类型存储
+              localStorage.setItem('userType', data.roleId);
               // 判断用户类型
               switch (data.roleId) {
                 case 'rd':
                   this.$router.push({
                     path: '/ProgrammerWorkPanel'
                   })
-                  // session
-                  localStorage.setItem('userType', data.roleId);
                   break;
+                case 'pm':
+                  this.$router.push({
+                    path: '/workPanel'
+                  })
+                  break;
+                case 'test':
+                  this.$router.push({
+                    path: '/workPanel'
+                  })
+                  break;
+                case 'admin':
+                  this.$router.push({
+                    path: '/managerWorkPanel'
+                  })
+                  break;
+                // 出现未知错误
                 default:
                   console.log('unKnown error')
+
               }
             }
           })

@@ -34,33 +34,27 @@
 <script>
   export default {
     name: 'WorkMenu',
-    mounted () {
-      console.log(localStorage.getItem('userType'))
-      // 不同用户跳不同界面
-      switch (localStorage.getItem('userType')) {
-        // 研发
-        case 'rd':
-          this.menu[0].name = '/ProgrammerWorkPanel'
-          break;
-        // 产品经理
-        case 'pm':
-          this.menu[0].name = '/workPanel'
-          break;
-        // 测试
-        case 'test':
-          this.menu[0].name = '/workPanel'
-          break;
-        // 管理员
-        case 'admin':
-          // console.log('succ')
-          this.menu[0].name = '/managerWorkPanel'
-          break;
-        // 出现未知错误
-        default:
-          console.log('unKnown error')
+    // mounted () {
+    //   switch (localStorage.getItem('userType')) {
+    //     case 'rd':
+    //       this.menu[0].name = '/ProgrammerWorkPanel'
+    //       break;
+    //     case 'pm':
+    //       this.menu[0].name = '/workPanel'
+    //       break;
+    //     case 'test':
+    //       this.menu[0].name = '/workPanel'
+    //       break;
+    //     case 'admin':
+    //       // console.log('succ')
+    //       this.menu[0].name = '/managerWorkPanel'
+    //       break;
+    //     // 出现未知错误
+    //     default:
+    //       console.log('unKnown error')
 
-      }
-    },
+    //   }
+    // },
     data () {
       return {
         avatar: 'static/imgs/avatar.jpg',

@@ -35,8 +35,6 @@
   export default {
     name: 'WorkMenu',
     mounted () {
-      console.log(localStorage.getItem('userType'))
-      // 不同用户跳不同界面
       switch (localStorage.getItem('userType')) {
         // 研发
         case 'rd':
