@@ -9,7 +9,7 @@
         <el-form label-width="0px" class="ms-content">
           <el-col :span="24" class="lableName">账号</el-col>
           <el-form-item prop="account">
-            <el-input placeholder="手机号或邮箱">
+            <el-input placeholder="手机号或邮箱" v-model="usrName">
               <el-button slot="prepend" icon="el-icon-user"></el-button>
             </el-input>
           </el-form-item>
@@ -20,7 +20,7 @@
             >
           </el-row>
           <el-form-item prop="password">
-            <el-input type="password" placeholder="请输入密码">
+            <el-input type="password" placeholder="请输入密码" v-model="usrPwd">
               <el-button slot="prepend" icon="el-icon-lock"></el-button>
             </el-input>
           </el-form-item>
@@ -37,13 +37,38 @@
   export default {
     data: function () {
       return {
+        usrName: '',
+        usrPwd: ''
       }
     },
     methods: {
       submitForm () {
-        this.$router.push({
-          path: '/workPanel'
-        })
+        // 获取登录地址
+        let url = '/doLogin?usrName=' + this.usrName + '&passWord=' + this.usrPwd;
+        // 请求登录
+        this.postRequest(url)
+          .then((res) => {
+            // console.log(data);
+            // 若登录成功
+            let data = res.data;
+            if (data.isSuccess) {
+              // 判断用户类型
+              switch (data.roleId) {
+                case 'rd':
+                  this.$router.push({
+                    path: '/ProgrammerWorkPanel'
+                  })
+                  // session
+                  localStorage.setItem('userType', data.roleId);
+                  break;
+                default:
+                  console.log('unKnown error')
+              }
+            }
+          })
+          .catch((error) => {
+            alert(error);
+          });
       },
     }
   }

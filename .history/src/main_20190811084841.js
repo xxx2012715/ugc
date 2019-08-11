@@ -13,22 +13,13 @@ import '@/assets/utils/iconfont.css'
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
-// 使用饿了么UI
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
-// 引入请求模块
-import { getRequest } from '@/assets/js/http'
-import { postRequest } from '@/assets/js/http'
-import { deleteRequest } from '@/assets/js/http'
-import { putRequest } from '@/assets/js/http'
-//  向VUE的原型上添加请求方法
-Vue.prototype.getRequest = getRequest;
-Vue.prototype.postRequest = postRequest;
-Vue.prototype.deleteRequest = deleteRequest;
-Vue.prototype.putRequest = putRequest;
-
-
+// 引入弹窗和cookies
+import VueSweetalert2 from 'vue-sweetalert2';
+import VueCookies from 'vue-cookies';
 
 /* eslint-disable no-new */
 new Vue({

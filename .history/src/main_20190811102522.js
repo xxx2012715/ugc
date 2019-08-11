@@ -18,6 +18,7 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 // 引入请求模块
+import '@/assets/js/http.js'
 import { getRequest } from '@/assets/js/http'
 import { postRequest } from '@/assets/js/http'
 import { deleteRequest } from '@/assets/js/http'

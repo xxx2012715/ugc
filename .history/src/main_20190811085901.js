@@ -17,11 +17,18 @@ Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
+// 引入弹窗和cookies
+import VueSweetalert2 from 'vue-sweetalert2';
+Vue.use(VueSweetalert2, options);
+
+import VueCookies from 'vue-cookies';
+Vue.use(VueCookies);
+
 // 引入请求模块
-import { getRequest } from '@/assets/js/http'
-import { postRequest } from '@/assets/js/http'
-import { deleteRequest } from '@/assets/js/http'
-import { putRequest } from '@/assets/js/http'
+import { getRequest } from './assets/js/http'
+import { postRequest } from './assets/js/http'
+import { deleteRequest } from './assets/js/http'
+import { putRequest } from './assets/js/http'
 //  向VUE的原型上添加请求方法
 Vue.prototype.getRequest = getRequest;
 Vue.prototype.postRequest = postRequest;
