@@ -4,38 +4,33 @@ import axios from 'axios'
 axios.defaults.baseURL = '/api';
 
 //get请求
-export const getRequest = (url, headers, responseType) => {
+export const getRequest = (url) => {
   return axios({
     method: 'get',
     url: url,
-    headers: headers,
-    responseType: responseType,
   });
 }
 //post请求
-export const postRequest = (url, params, headers) => {
+export const postRequest = (url, params) => {
   return axios({
     method: 'post',
     url: url,
     data: params,
-    headers: headers,
   });
 }
 //put请求
-export const putRequest = (url, params, headers) => {
+export const putRequest = (url, params) => {
   return axios({
     method: 'put',
     url: url,
     data: params,
-    headers: headers,
   });
 }
 //delete请求
-export const deleteRequest = (url, headers) => {
+export const deleteRequest = (url) => {
   return axios({
     method: 'delete',
     url: url,
-    headers: headers
   });
 }
 //文件上传
