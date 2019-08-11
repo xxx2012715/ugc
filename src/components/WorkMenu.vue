@@ -1,8 +1,8 @@
 <template>
   <div id="WorkMenu">
-    <img :src="avatar" class="avatar" />
-    <span class="userName">苏宸</span>
-    <span class="userPosition">产品经理</span>
+    <img :src="avatarUrl" class="avatar" />
+    <span class="userName">{{userName}}</span>
+    <span class="userPosition">{{roleName}}</span>
     <div class="menu">
       <!-- 原菜单 -->
       <!-- <div
@@ -34,36 +34,8 @@
 <script>
   export default {
     name: 'WorkMenu',
-    mounted () {
-      console.log(localStorage.getItem('userType'))
-      // 不同用户跳不同界面
-      switch (localStorage.getItem('userType')) {
-        // 研发
-        case 'rd':
-          this.menu[0].name = '/ProgrammerWorkPanel'
-          break;
-        // 产品经理
-        case 'pm':
-          this.menu[0].name = '/workPanel'
-          break;
-        // 测试
-        case 'test':
-          this.menu[0].name = '/workPanel'
-          break;
-        // 管理员
-        case 'admin':
-          // console.log('succ')
-          this.menu[0].name = '/managerWorkPanel'
-          break;
-        // 出现未知错误
-        default:
-          console.log('unKnown error')
-
-      }
-    },
     data () {
       return {
-        avatar: 'static/imgs/avatar.jpg',
         menu: [
           {
             name: '',
@@ -83,8 +55,43 @@
           },
         ],
         selectedTab: 0,
+        roleName:'',
+        userName:localStorage.getItem('usrName'),
+        avatarUrl:localStorage.getItem('avatarUrl'),
       }
     },
+    mounted () {
+      console.log(localStorage.getItem('userType'))
+      // 不同用户跳不同界面
+      switch (localStorage.getItem('userType')) {
+        // 研发
+        case 'rd':
+          this.menu[0].name = '/ProgrammerWorkPanel';
+          this.roleName = '研发';
+          break;
+        // 产品经理
+        case 'pm':
+          this.menu[0].name = '/workPanel';
+          this.roleName = '产品经理';
+          break;
+        // 测试
+        case 'test':
+          this.menu[0].name = '/workPanel';
+          this.roleName = '测试';
+          break;
+        // 管理员
+        case 'admin':
+          // console.log('succ')
+          this.menu[0].name = '/managerWorkPanel';
+          this.roleName = '管理员';
+          break;
+        // 出现未知错误
+        default:
+          console.log('unKnown error')
+
+      }
+    },
+    
   }
 </script>
 

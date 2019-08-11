@@ -16,7 +16,7 @@
               <el-button class="allBtn" round>关注</el-button>
           </el-col>
           <el-col :span="3" align="center">
-              <el-button class="allBtn" round>评论</el-button>
+              <el-button class="allBtn" round @click="comment()">评论</el-button>
           </el-col>
           <el-col :span="3" align="center">
               <el-button class="allBtn" round>编辑</el-button>
@@ -45,7 +45,7 @@
               <el-col :span="10">状态：未开始</el-col>
             </el-row>
             <el-row>
-              <el-col :span="10" :offset="2">优先级：高</el-col>
+              <el-col :span="10" :offset="2">优先级：<span style="color:red">高</span></el-col>
               <el-col :span="10">解决结果：未解决</el-col>
             </el-row>
           </section>
@@ -66,7 +66,7 @@
               <el-col :span="19"><hr></el-col>
             </el-row>
             <el-row>
-              <el-col :offset="2">IP-001 移动端ios手机营业厅bug</el-col>
+              <el-col :offset="2"><a style="color:blue">IP-001 移动端ios手机营业厅bug</a></el-col>
             </el-row>
           </section>
           <!-- 附件 -->
@@ -76,7 +76,7 @@
               <el-col :span="20"><hr></el-col>
             </el-row>
             <el-row>
-              <el-col :span="16" :offset="2">需求稿.zip</el-col>
+              <el-col :span="16" :offset="2"><a style="color:blue">需求稿.zip</a></el-col>
               <el-col :span="4">2019/7/30</el-col>
             </el-row>
           </section>
@@ -142,6 +142,18 @@
     <div class="comment">
       <comments-task></comments-task>
     </div>
+    <!-- 评论弹窗 -->
+    <el-dialog title="评论" :visible.sync="commentVisible" width="40%">
+      <el-row>
+        <el-col :span="20" :offset="2">
+          <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 6}" placeholder="请输入内容"></el-input>
+        </el-col>
+      </el-row>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="centerDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -151,12 +163,16 @@
     name: 'QuestionOperation',
     data () {
       return {
+        commentVisible:false,
       }
     },
     components: {
       CommentsTask,
     },
     methods: {
+      comment(){
+        this.commentVisible = true;
+      }
     }
   };
 </script>
@@ -230,4 +246,14 @@
     align-items center
     margin-left 45px
     margin-top 15px
+  .el-dialog__wrapper
+    top 200px
+    .el-dialog__header
+      background #007aa3
+      color #fff
+      // display flex
+      // align-items center
+    // .el-textarea__inner
+    //   min-height 200px
+    //   height 200px
 </style>

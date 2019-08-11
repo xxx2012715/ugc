@@ -38,7 +38,7 @@
     data: function () {
       return {
         usrName: '',
-        usrPwd: ''
+        usrPwd: '',
       }
     },
     methods: {
@@ -57,6 +57,8 @@
             if (data.isSuccess) {
               // 用户类型存储
               localStorage.setItem('userType', data.roleId);
+              localStorage.setItem('usrName', data.usrName);
+              localStorage.setItem('avatarUrl', data.avatarUrl);
               // 判断用户类型
               switch (data.roleId) {
                 case 'rd':
@@ -84,6 +86,8 @@
                   console.log('unKnown error')
 
               }
+            }else{
+              alert('登录失败，请重新登录！')
             }
           })
           .catch((error) => {

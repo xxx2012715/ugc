@@ -24,8 +24,8 @@
         关注列表
       </div>
       <div class="self" @click="logOut">
-        <el-image :src="selfUrl" class="selfAvatar" fit="contain"></el-image>
-        <span class="userName">苏宸</span>
+        <el-image :src="avatarUrl" class="selfAvatar" fit="contain"></el-image>
+        <span class="userName">{{userName}}</span>
       </div>
     </div>
   </div>
@@ -39,7 +39,8 @@
         // 搜索框内容
         searchInput: '',
         // 头像地址
-        selfUrl: 'static/imgs/avatar.jpg',
+        userName: localStorage.getItem('usrName'),
+        avatarUrl:localStorage.getItem('avatarUrl'),
       };
     },
     methods: {
