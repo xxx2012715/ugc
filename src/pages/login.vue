@@ -53,40 +53,42 @@
             // console.log(data);
             // 若登录成功
             let data = res.data;
+            let usrType = '';
+            let pathU = '';
             console.log(data)
             if (data.isSuccess) {
-              // 用户类型存储
+              // 用户数据存储
               localStorage.setItem('userType', data.roleId);
               localStorage.setItem('usrName', data.usrName);
               localStorage.setItem('avatarUrl', data.avatarUrl);
               // 判断用户类型
               switch (data.roleId) {
                 case 'rd':
-                  this.$router.push({
-                    path: '/ProgrammerWorkPanel'
-                  })
+                  usrType = '研发人员';
+                  pathU = '/ProgrammerWorkPanel';
                   break;
                 case 'pm':
-                  this.$router.push({
-                    path: '/workPanel'
-                  })
+                  usrType = '产品经理';
+                  pathU = '/workPanel';
                   break;
                 case 'test':
-                  this.$router.push({
-                    path: '/workPanel'
-                  })
+                  usrType = '测试人员';
+                  pathU = '/workPanel';
                   break;
                 case 'admin':
-                  this.$router.push({
-                    path: '/managerWorkPanel'
-                  })
+                  usrType = '管理员';
+                  pathU = '/managerWorkPanel';
                   break;
                 // 出现未知错误
                 default:
                   console.log('unKnown error')
-
               }
-            }else{
+              // 角色类型存储 & 路由跳转
+              localStorage.setItem('usrType', usrType);
+              this.$router.push({
+                path: pathU
+              })
+            } else {
               alert('登录失败，请重新登录！')
             }
           })
