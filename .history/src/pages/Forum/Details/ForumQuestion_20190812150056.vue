@@ -113,6 +113,10 @@
             this.questioner.name = usr.usrName;
             this.questioner.date = data.createTime;
             this.questioner.link = data.linkTaskId;
+            // 存储提问者信息
+            localStorage.setItem('questionerName', usr.usrName);
+            localStorage.setItem('questionerAccount', usr.usrAccount);
+            localStorage.setItem('questionerAvatar', usr.usrHeadportraitUrl);
 
           })
           .catch((error) => {

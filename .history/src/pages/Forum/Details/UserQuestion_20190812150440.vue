@@ -87,22 +87,10 @@
       }
     },
     mounted () {
-      let id = this.$route.params.id;
-      let questionerUrl = `/getForumContentById?forumContentId=${id}`;
-      // 更新提问者信息
-      this.postRequest(questionerUrl)
-        .then((res) => {
-          console.log(111, res)
-          let data = res.data;
-          let usr = data.usr;
-          this.questioner.avatar = usr.usrHeadportraitUrl;
-          this.questioner.name = usr.usrName;
-          this.questioner.account = usr.usrAccount;
-
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.questioner.name = localStorage.getItem('questionerName');
+      console.log(this.questioner.name)
+      this.questioner.account = localStorage.getItem('questionerAccount');
+      this.questioner.avatar = localStorage.getItem('questionerAvatar');
     }
   }
 </script>

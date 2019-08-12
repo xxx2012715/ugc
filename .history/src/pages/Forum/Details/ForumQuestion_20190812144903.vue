@@ -54,8 +54,8 @@
             ></el-avatar>
             <div class="information">
               <div class="infoTop">
-                <span class="userName">{{ item.usr.usrName }}</span>
-                <span class="userPosi">{{ item.usr.usrAccount }}</span>
+                <span class="userName">{{ item.usrName }}</span>
+                <span class="userPosi">{{ item.usrAccount }}</span>
               </div>
               <div class="infoBtm">
                 {{ item.createTime }}
@@ -68,8 +68,8 @@
           </div>
           <!-- 按钮: 评论 & 点赞 -->
           <div class="praise">
-            <el-button class="commentsBtn" disabled>评论 1</el-button>
-            <el-button class="commentsBtn" disabled>点赞 1</el-button>
+            <el-button class="commentsBtn">评论 1</el-button>
+            <el-button class="commentsBtn">点赞 1</el-button>
           </div>
         </div>
       </div>

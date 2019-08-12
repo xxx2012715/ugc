@@ -87,17 +87,17 @@
       }
     },
     mounted () {
-      let id = this.$route.params.id;
       let questionerUrl = `/getForumContentById?forumContentId=${id}`;
       // 更新提问者信息
       this.postRequest(questionerUrl)
         .then((res) => {
-          console.log(111, res)
+          console.log(res)
           let data = res.data;
           let usr = data.usr;
           this.questioner.avatar = usr.usrHeadportraitUrl;
           this.questioner.name = usr.usrName;
-          this.questioner.account = usr.usrAccount;
+          this.questioner.date = data.createTime;
+          this.questioner.link = data.linkTaskId;
 
         })
         .catch((error) => {

@@ -32,10 +32,7 @@
       <!-- 头部 -->
       <div class="headSum">
         <div class="totalNum">
-          共 &nbsp;<span class="answerTotalNum">
-            {{ commentsList.length }}
-          </span>
-          &nbsp; 个回答
+          共 &nbsp;<span class="answerTotalNum"> 9 </span> &nbsp; 个回答
         </div>
         <span class="answerSort">
           <span class="iconfont sortClock">&#xe6a1;</span>
@@ -48,28 +45,27 @@
         <div class="li" v-for="item in commentsList" :key="item.index">
           <!-- 用户信息 -->
           <div class="userInfo">
-            <el-avatar
-              :size="60"
-              :src="item.usr.usrHeadportraitUrl"
-            ></el-avatar>
+            <el-avatar :size="60" :src="item.avatar"></el-avatar>
             <div class="information">
               <div class="infoTop">
-                <span class="userName">{{ item.usr.usrName }}</span>
-                <span class="userPosi">{{ item.usr.usrAccount }}</span>
+                <span class="userName">{{ item.userName }}</span>
+                <span class="userPosi">{{ item.userPosi }}</span>
               </div>
               <div class="infoBtm">
-                {{ item.createTime }}
+                2019-08-01 &nbsp; 23:22
               </div>
             </div>
           </div>
           <!-- 评论内容 -->
           <div class="comments">
-            {{ item.forumComment }}
+            {{ item.comments }}
           </div>
           <!-- 按钮: 评论 & 点赞 -->
           <div class="praise">
-            <el-button class="commentsBtn" disabled>评论 1</el-button>
-            <el-button class="commentsBtn" disabled>点赞 1</el-button>
+            <el-button class="commentsBtn"
+              >评论 {{ item.commentsNum }}</el-button
+            >
+            <el-button class="commentsBtn">点赞 {{ item.praiseNum }}</el-button>
           </div>
         </div>
       </div>
@@ -90,7 +86,16 @@
           date: 'waiting',
           link: 'waiting'
         },
-        commentsList: []
+        commentsList: [
+          {
+            avatar: 'waiting',
+            userName: 'waiting',
+            userPosi: 'waiting',
+            commentsNum: 'waiting',
+            praiseNum: 'waiting',
+            comments: 'waiting'
+          }
+        ]
       }
     },
     mounted () {
@@ -122,8 +127,7 @@
         let commentsUrl = `/getForumCommentByForumAnswerId?forumAnswerId=${id}`;
         this.postRequest(commentsUrl)
           .then((res) => {
-            console.log('comments', res);
-            this.commentsList = res.data;
+
           })
           .catch((error) => {
             console.log(error);

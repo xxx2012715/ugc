@@ -4,10 +4,10 @@
     <div class="questioner">
       <!-- 上边栏 -->
       <div class="quesTop">
-        <el-avatar :size="120" :src="questioner.avatar"></el-avatar>
+        <el-avatar :size="120" :src="questionerAvatar"></el-avatar>
         <div class="quesInfo">
-          <span class="quesName">{{ questioner.name }}</span>
-          <span class="quesPosi">{{ questioner.account }}</span>
+          <span class="quesName">{{ quesName }}</span>
+          <span class="quesPosi">{{ quesPosi }}</span>
         </div>
       </div>
       <!-- 下边栏 -->
@@ -50,13 +50,11 @@
     data () {
       return {
         // 提问人信息
-        questioner: {
-          name: '',
-          account: '',
-          avatar: '',
-        },
+        quesName: '',
+        quesPosi: '',
         requestList: ['需求1需求1需求1需求1需求1需求1需求1需求1', '需求2求2需求2求2需求2求2需求2求2',],
         focusList: ['关注关注关注关注关注关注'],
+        questionerAvatar: '',
         quesList: [
           {
             msg: '安卓手机端页面自适应大家是怎么解决的？解决的？页面自适应大家是怎么解决的？页面自适',
@@ -86,24 +84,7 @@
         ]
       }
     },
-    mounted () {
-      let id = this.$route.params.id;
-      let questionerUrl = `/getForumContentById?forumContentId=${id}`;
-      // 更新提问者信息
-      this.postRequest(questionerUrl)
-        .then((res) => {
-          console.log(111, res)
-          let data = res.data;
-          let usr = data.usr;
-          this.questioner.avatar = usr.usrHeadportraitUrl;
-          this.questioner.name = usr.usrName;
-          this.questioner.account = usr.usrAccount;
 
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
   }
 </script>
 

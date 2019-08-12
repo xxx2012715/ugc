@@ -8,11 +8,9 @@
       <!-- 用户信息 -->
       <div class="questioner">
         <el-avatar :size="30" :src="questioner.avatar"></el-avatar>
-        <span class="">{{ questioner.name }}</span>
-        <span class="date">{{ questioner.date }} &nbsp;</span>
-        <span class="quesLink"
-          >链接问题: <span>{{ questioner.link }}</span></span
-        >
+        <span class="">{{ questioner.usr.usrName }}</span>
+        <span class="date">2019-08-01 &nbsp; 12:22</span>
+        <span class="quesLink">链接问题: <span>IP-009</span></span>
       </div>
       <!-- 问题描述 -->
       <div class="description">
@@ -32,10 +30,7 @@
       <!-- 头部 -->
       <div class="headSum">
         <div class="totalNum">
-          共 &nbsp;<span class="answerTotalNum">
-            {{ commentsList.length }}
-          </span>
-          &nbsp; 个回答
+          共 &nbsp;<span class="answerTotalNum"> 9 </span> &nbsp; 个回答
         </div>
         <span class="answerSort">
           <span class="iconfont sortClock">&#xe6a1;</span>
@@ -48,28 +43,27 @@
         <div class="li" v-for="item in commentsList" :key="item.index">
           <!-- 用户信息 -->
           <div class="userInfo">
-            <el-avatar
-              :size="60"
-              :src="item.usr.usrHeadportraitUrl"
-            ></el-avatar>
+            <el-avatar :size="60" :src="item.avatar"></el-avatar>
             <div class="information">
               <div class="infoTop">
-                <span class="userName">{{ item.usr.usrName }}</span>
-                <span class="userPosi">{{ item.usr.usrAccount }}</span>
+                <span class="userName">{{ item.userName }}</span>
+                <span class="userPosi">{{ item.userPosi }}</span>
               </div>
               <div class="infoBtm">
-                {{ item.createTime }}
+                2019-08-01 &nbsp; 23:22
               </div>
             </div>
           </div>
           <!-- 评论内容 -->
           <div class="comments">
-            {{ item.forumComment }}
+            {{ item.comments }}
           </div>
           <!-- 按钮: 评论 & 点赞 -->
           <div class="praise">
-            <el-button class="commentsBtn" disabled>评论 1</el-button>
-            <el-button class="commentsBtn" disabled>点赞 1</el-button>
+            <el-button class="commentsBtn"
+              >评论 {{ item.commentsNum }}</el-button
+            >
+            <el-button class="commentsBtn">点赞 {{ item.praiseNum }}</el-button>
           </div>
         </div>
       </div>
@@ -82,15 +76,22 @@
     name: "ForumQuestion",
     data () {
       return {
-        userName: '',
-        userPosi: '',
         questioner: {
-          avatar: '',
-          name: 'waiting',
-          date: 'waiting',
-          link: 'waiting'
+          avatar: 'static/imgs/avatar.jpg',
+          name: '',
+          date: '',
+          link: ''
         },
-        commentsList: []
+        commentsList: [
+          {
+            avatar: 'static/imgs/kate.jpg',
+            userName: '徐凯特',
+            userPosi: '研发人员',
+            commentsNum: '9',
+            praiseNum: '21',
+            comments: '这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容'
+          }
+        ]
       }
     },
     mounted () {
@@ -102,11 +103,10 @@
     methods: {
       // 初始化页面数据加载
       getInfo (id) {
-        let questionerUrl = `/getForumContentById?forumContentId=${id}`;
-        // 更新提问者信息
-        this.postRequest(questionerUrl)
+        let url = `/getForumContentById?forumContentId=${id}`;
+        this.postRequest(url)
           .then((res) => {
-            console.log(res)
+            // console.log(res)
             let data = res.data;
             let usr = data.usr;
             this.questioner.avatar = usr.usrHeadportraitUrl;
@@ -114,16 +114,6 @@
             this.questioner.date = data.createTime;
             this.questioner.link = data.linkTaskId;
 
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-        // 更新评论内容
-        let commentsUrl = `/getForumCommentByForumAnswerId?forumAnswerId=${id}`;
-        this.postRequest(commentsUrl)
-          .then((res) => {
-            console.log('comments', res);
-            this.commentsList = res.data;
           })
           .catch((error) => {
             console.log(error);

@@ -87,7 +87,6 @@
       }
     },
     mounted () {
-      let id = this.$route.params.id;
       let questionerUrl = `/getForumContentById?forumContentId=${id}`;
       // 更新提问者信息
       this.postRequest(questionerUrl)

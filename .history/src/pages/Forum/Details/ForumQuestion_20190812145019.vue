@@ -69,7 +69,7 @@
           <!-- 按钮: 评论 & 点赞 -->
           <div class="praise">
             <el-button class="commentsBtn" disabled>评论 1</el-button>
-            <el-button class="commentsBtn" disabled>点赞 1</el-button>
+            <el-button class="commentsBtn">点赞 1</el-button>
           </div>
         </div>
       </div>
