@@ -5,9 +5,12 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 
+
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/utils/reset.css'
 import '@/assets/utils/iconfont.css'
+
+import VueSweetalert2 from 'vue-sweetalert2';
 
 // 引入echarts
 import echarts from 'echarts'
@@ -16,6 +19,14 @@ Vue.prototype.$echarts = echarts
 // 使用饿了么UI
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+
+
+const options = {
+	confirmButtonColor: 'rgb(0,122,163)',
+	cancelButtonColor: 'rgb(48,135,51)'
+}
+
+Vue.use(VueSweetalert2, options);
 
 // 引入请求模块
 import { getRequest } from '@/assets/js/http'

@@ -6,20 +6,6 @@
       <span class="depart">/</span>
       <span class="panelTit">问题池</span>
     </div>
-    <!-- 日历 -->
-    <div class="calender">
-      <el-date-picker
-        v-model="value2"
-        type="daterange"
-        align="right"
-        unlink-panels
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
-        :picker-options="pickerOptions"
-        class="calenderr"
-      ></el-date-picker>
-    </div>
     <div class="QuestionKindDetail">
         <!-- 顶栏 -->
         <div class="headLine">
@@ -28,7 +14,7 @@
         <div class="taskProgress" style="width: 1400px;height:200px;">
           <div class="progress">
             <div class="percent-left">
-               <el-progress :percentage="50" :stroke-width="15" :color="iosColor" :format="format"></el-progress>
+               <el-progress :percentage="iosPercentage" :stroke-width="15" :color="iosColor" :format="format"></el-progress>
             </div>
             <div class="percent-right">
               <div class="circle" style="background:#007aa3"></div>
@@ -37,7 +23,7 @@
           </div>
           <div class="progress">
             <div class="percent-left">
-               <el-progress :percentage="68" :stroke-width="15" :color="andriodColor" :format="format"></el-progress>
+               <el-progress :percentage="andriodPercentage" :stroke-width="15" :color="andriodColor" :format="format"></el-progress>
             </div>
             <div class="percent-right">
               <div class="circle" style="background:#6dc0b0"></div>
@@ -46,7 +32,7 @@
           </div>
           <div class="progress">
             <div class="percent-left">
-              <el-progress :percentage="79" :stroke-width="15" :color="bigDataColor" :format="format"></el-progress>
+              <el-progress :percentage="bigDataPercentage" :stroke-width="15" :color="bigDataColor" :format="format"></el-progress>
             </div>
             <div class="percent-right">
               <div class="circle" style="background:#b0dabf"></div>
@@ -55,7 +41,7 @@
           </div>
           <div class="progress">
             <div class="percent-left">
-               <el-progress :percentage="32" :stroke-width="15" :color="internetColor" :format="format"></el-progress>
+               <el-progress :percentage="internetPercentage" :stroke-width="15" :color="internetColor" :format="format"></el-progress>
             </div>
             <div class="percent-right">
               <div class="circle" style="background:#ecffba"></div>
@@ -72,48 +58,36 @@
     name: 'QuestionKind',
     data () {
       return {
-        pickerOptions: {
-          shortcuts: [
-            {
-              text: '最近一周',
-              onClick (picker) {
-                const end = new Date();
-                const start = new Date();
-                start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                picker.$emit('pick', [start, end]);
-              }
-            },
-            {
-              text: '最近一个月',
-              onClick (picker) {
-                const end = new Date();
-                const start = new Date();
-                start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                picker.$emit('pick', [start, end]);
-              }
-            },
-            {
-              text: '最近三个月',
-              onClick (picker) {
-                const end = new Date();
-                const start = new Date();
-                start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                picker.$emit('pick', [start, end]);
-              }
-            }
-          ]
-        },
-        value2: '',
         iosColor:'#007aa3',
         andriodColor:'#6dc0b0',
         bigDataColor:'#b0dabf',
-        internetColor:'#ecffba'
+        internetColor:'#ecffba',
+        iosPercentage:'',
+        andriodPercentage:'',
+        bigDataPercentage:'',
+        internetPercentage:'',
       }
+    },
+    created() {
+      this.getKindData();
     },
     methods: {
       format(percentage) {
         return percentage = `${percentage}`;
-      }
+      },
+      getKindData(){
+        let url = '/questionTypeNum';
+        this.getRequest(url).then((res) => {
+            let data = res.data;
+            this.iosPercentage = data.移动端IOS问题;
+            this.andriodPercentage = data.移动端安卓问题;
+            this.bigDataPercentage = data.大数据研发问题;
+            this.internetPercentage = data.物联网研发问题;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
     }
   };
 </script>
@@ -140,13 +114,6 @@
     .panelTit
       color blue
       cursor pointer
-  // 日历
-  .calender
-    width 100%
-    display flex
-    justify-content flex-end
-    .calenderr
-      margin-right 3rem
  //问题类型
   .QuestionKindDetail
     width 1500px
