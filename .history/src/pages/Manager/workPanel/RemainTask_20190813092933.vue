@@ -121,20 +121,19 @@
       // 拒绝
       refuse (index, row) {
         // 拒绝权限申请
-        let passUrl = `/refuseApplyRight?usrAccount=${row.usrAccount}&applyRoleId=${row.applyRoleId}`;
+        let passUrl = `/acceptApplyRight?usrAccount=${row.usrAccount}&applyRoleId=${row.applyRoleId}`;
         this.postRequest(passUrl)
           .then((res) => {
             console.log(res.data);
             // 消息提醒
             if (res.data.success == 1) {
               this.$message({
-                message: '已拒绝申请',
+                message: '已通过',
                 type: 'success'
               });
-              // 刷新面板
               this.reload();
             } else {
-              this.$message.error('拒绝失败');
+              this.$message.error('申请失败');
             }
 
           })

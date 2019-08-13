@@ -117,7 +117,6 @@
             this.develop1Name = msg.develop1Name;
             this.develop2Name = msg.develop2Name;
             this.testerName = msg.testerName;
-            // 头像
             this.developer1Avatar = msg.developer1Img;
             this.developer2Avatar = msg.developer2Img;
             this.testerAvatar = msg.testerImg;

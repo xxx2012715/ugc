@@ -131,10 +131,9 @@
                 message: '已拒绝申请',
                 type: 'success'
               });
-              // 刷新面板
               this.reload();
             } else {
-              this.$message.error('拒绝失败');
+              this.$message.error('申请失败');
             }
 
           })
