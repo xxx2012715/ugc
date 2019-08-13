@@ -4,58 +4,92 @@
       <span>现有权限</span>
     </div>
     <div class="cont">
-      <el-table :data="tableData" height="200" style="width: 100%">
-        <el-table-column prop="name" label="权限名称" width="150"></el-table-column>
-        <el-table-column prop="date" label="获得时间" width="180"></el-table-column>
-        <el-table-column prop="avatar" label="" width="130" align="right">
-            <template slot-scope="scope">
-              <img :src="scope.row.avatar" class="avatar" />
-            </template>
-          </el-table-column>
-        <el-table-column prop="admin" label="经办管理员" width="180"></el-table-column>
-        <el-table-column prop="act" label="操作" width="180"></el-table-column>
+      <el-table :data="tableData" height="220" style="width: 100%">
+        <el-table-column
+          prop="applyRoleName"
+          label="权限名称"
+          width="200"
+        ></el-table-column>
+        <el-table-column
+          prop="createTime"
+          label="获得时间"
+          width="200"
+        ></el-table-column>
+        <!-- <el-table-column prop="avatar" label="" width="130" align="right">
+          <template slot-scope="scope">
+            <img :src="scope.row.avatar" class="avatar" />
+          </template>
+        </el-table-column> -->
+        <el-table-column
+          prop="applyUsrName"
+          label="经办管理员"
+          width="200"
+        ></el-table-column>
+        <el-table-column prop="删除此权限" label="操作" width="180">
+          <template slot-scope="scope">
+            <el-button
+              @click.native.prevent="deleteRow(scope.$index, tableData)"
+              type="text"
+              size="small"
+              disabled
+            >
+              移除
+            </el-button>
+          </template></el-table-column
+        >
       </el-table>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      tableData: [
-        {
-          avatar: "static/imgs/chenwei.jpg",
-          name: "产品经理",
-          date: "2019-7-26",
-          admin: "陈伟",
-          act: "删除此权限"
-        },
-        {
-          name: "管理员",
-          date: "2019-7-26",
-          admin: "陈伟",
-          act: "删除此权限",
-          avatar: "static/imgs/chenwei.jpg"
-        },
-        {
-          name: "产品经理",
-          date: "2019-7-26",
-          admin: "陈伟",
-          act: "删除此权限",
-          avatar: "static/imgs/chenwei.jpg"
-        },
-        {
-          name: "测试",
-          date: "2019-7-26",
-          admin: "易杭杭",
-          act: "删除此权限",
-          avatar: "static/imgs/chenwei.jpg"
-        }
-      ]
-    };
+  export default {
+    name: 'CurrentPermission',
+    data () {
+      return {
+        tableData: []
+      };
+    },
+    inject: ['reload'],
+    mounted () {
+      this.getPermissionInfo();
+    },
+    methods: {
+      // 获取权限信息
+      getPermissionInfo () {
+        let currentPermissionUrl = `/getOwnedRightForPage?currentIndex=1&pageSize=4`;
+        this.postRequest(currentPermissionUrl)
+          .then((res) => {
+            console.log('获取权限信息', res);
+            this.tableData = res.data;
+          })
+          .catch((error) => {
+            console.log('error')
+          })
+      },
+      // 移除权限
+      deleteRow (index, tableData) {
+        // console.log('data', tableData[index]);
+        let deletePermissionUrl = `/deleteRoleByApplyRoleId?roleId=${tableData[index].applyRoleId}`;
+        this.postRequest(deletePermissionUrl)
+          .then((res) => {
+            console.log('删除权限操作返回', res.data);
+            // 消息提醒
+            this.$message({
+              message: '移除权限成功',
+              type: 'success'
+            });
+            // 刷新面板
+            this.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        // 刷新权限表
+        this.getPermissionInfo();
+      }
+    }
   }
-};
 </script>
 
 <style lang="stylus" scoped>

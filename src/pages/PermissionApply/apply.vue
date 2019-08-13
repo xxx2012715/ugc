@@ -74,11 +74,15 @@
             let applyUrl = `/saveApplyRightProgress?applyRoleId=${this.ruleForm.type}&applyUsrAccount=${this.ruleForm.desc}`
             this.postRequest(applyUrl)
               .then((res) => {
-                if (res == null) {
-                  alert('已经申请过啦')
+                if (res.data == '') {
+                  this.$message({
+                    type: 'error',
+                    message: '已经申请过啦，请不要重复申请'
+                  })
                 } else {
                   alert("申请提交成功!");
                   console.log(res);
+                  this.$emit('applySucc');
                 }
               })
               .catch((error) => {

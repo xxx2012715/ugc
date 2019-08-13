@@ -98,27 +98,29 @@
             <el-row style="margin-top:-25px" class="headArea">
               <el-col :span="5" :offset="3">产品经理：</el-col>
               <el-col :span="4" :offset="1">
-                <img class="headImg" src="../../../static/imgs/avatar.jpg" alt="">
+                <img class="headImg" :src="pmImg" alt="">
               </el-col>
+
+              
               <el-col :span="5">{{productManager}}</el-col>
             </el-row>
             <el-row class="headArea">
               <el-col :span="5" :offset="3">研发：</el-col>
               <el-col :span="4" :offset="1">
-                <img class="headImg" src="../../../static/imgs/chenwei.jpg" alt="">
+                <img class="headImg" :src="devImg1" alt="">
               </el-col>
               <el-col :span="5">{{developer1}}</el-col>
             </el-row>
             <el-row class="headArea">
               <el-col :span="4" :offset="9">
-                <img class="headImg" src="../../../static/imgs/kate.jpg" alt="">
+                <img class="headImg" :src="devImg2" alt="">
               </el-col>
               <el-col :span="5">{{developer2}}</el-col>
             </el-row>
              <el-row class="headArea">
               <el-col :span="5" :offset="3">测试：</el-col>
               <el-col :span="4" :offset="1">
-                <img class="headImg" src="../../../static/imgs/wpp.png" alt="">
+                <img class="headImg" :src="testImg" alt="">
               </el-col>
               <el-col :span="5">{{tester}}</el-col>
             </el-row>
@@ -263,7 +265,11 @@
         taskName:'',
         commentContent:'',
         dept:'研发',
-        dev:''
+        dev:'',
+        pmImg:'',
+        devImg1:'',
+        devImg2:'',
+        testImg:''
       }
     },
     components: {
@@ -291,10 +297,14 @@
             this.createTime = data.date;
             this.modifyTime = data.lastsaved;
             this.productManager = data.pm;
+            this.pmImg = data.pmImg;
             this.developer1 = data.dev1;
+            this.devImg1 = data.dev1Img;
             this.developer2 = data.dev2;
+            this.devImg2 = data.dev2Img;
             this.dev = this.developer1 + ';' + this.developer2;
             this.tester = data.tester;
+            this.testImg = data.testerImg;
             this.startVisible = data.buttonIsShow;
             if(this.startVisible == true){
               this.taskName = data.button;

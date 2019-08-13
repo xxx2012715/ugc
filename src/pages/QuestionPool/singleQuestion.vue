@@ -10,7 +10,7 @@
           评论中心
         </span>
         <!-- 评论显示表格 -->
-        <el-table :data="commentsData" stripe height="500" style="width: 100%;font-size:18px">
+        <el-table :data="commentsData" stripe height="597" style="width: 100%;font-size:18px">
           <!-- 头像 -->
           <el-table-column prop="头像" label="" width="130" align="right">
             <template slot-scope="scope">
@@ -37,7 +37,7 @@
           进程中心
         </span>
         <!-- 任务显示表格--暂时copy评论面板 -->
-        <el-table :data="processData" stripe  height="500" style="width: 100%;font-size:18px;">
+        <el-table :data="processData" stripe  height="597" style="width: 100%;font-size:18px;">
           <!-- 头像 -->
           <el-table-column prop="头像" label="" width="130" align="right">
             <template slot-scope="scope">
@@ -105,7 +105,7 @@
   color rgb(99,98,98)
   .tabs
     width 1300px
-    height 600px
+    height 690px
     .commonTab
       font-size 20px
     .avatar

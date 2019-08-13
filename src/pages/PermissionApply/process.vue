@@ -5,57 +5,85 @@
     </div>
     <div class="cont">
       <el-table :data="tableData" height="200" style="width: 100%">
-        <el-table-column prop="date" label="申请时间" width="300"></el-table-column>
-        <el-table-column prop="type" label="权限类型" width="300"></el-table-column>
-                <el-table-column prop="avatar" label="" width="130" align="right">
-            <template slot-scope="scope">
-              <img :src="scope.row.avatar" class="avatar" />
-            </template>
-          </el-table-column>
-        <el-table-column prop="admin" label="经办管理员" width="300"></el-table-column>
-        <el-table-column prop="state" label="状态" width="300"></el-table-column>
+        <el-table-column
+          prop="createTime"
+          label="申请时间"
+          width="320"
+          align="center"
+        ></el-table-column>
+        <el-table-column
+          prop="applyRoleName"
+          label="权限类型"
+          align="center"
+          width="320"
+        ></el-table-column>
+        <el-table-column
+          prop="applyUsrName"
+          label="经办管理员"
+          width="320"
+          align="center"
+        ></el-table-column>
+        <el-table-column
+          prop="applyStateName"
+          label="状态"
+          width="320"
+          align="center"
+        ></el-table-column>
       </el-table>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      tableData: [
-        {
-          date: "2019-7-31",
-          type: "测试",
-          admin: "陈伟",
-          state: "申请成功",
-          avatar: "static/imgs/chenwei.jpg"
-        },
-        {
-          date: "2019-7-26",
-          type: "管理员",
-          admin: "陈伟",
-          state: "申请失败",
-          avatar: "static/imgs/chenwei.jpg"
-        },
-        {
-          date: "2019-7-26",
-          type: "产品经理",
-          admin: "徐凯特",
-          state: "申请中",
-          avatar: "static/imgs/chenwei.jpg"
-        },
-        {
-          date: "2019-7-26",
-          type: "管理员",
-          admin: "吴萍萍",
-          state: "申请成功",
-          avatar: "static/imgs/chenwei.jpg"
-        }
-      ]
-    };
-  }
-};
+  export default {
+    data () {
+      return {
+        tableData: [
+          {
+            date: "2019-7-31",
+            type: "测试",
+            admin: "陈伟",
+            state: "申请成功",
+          },
+          // {
+          //   date: "2019-7-26",
+          //   type: "管理员",
+          //   admin: "陈伟",
+          //   state: "申请失败",
+          // },
+          // {
+          //   date: "2019-7-26",
+          //   type: "产品经理",
+          //   admin: "徐凯特",
+          //   state: "申请中",
+          // },
+          // {
+          //   date: "2019-7-26",
+          //   type: "管理员",
+          //   admin: "吴萍萍",
+          //   state: "申请成功",
+          // }
+        ]
+      }
+    },
+    mounted () {
+      this.getProcessInfo();
+    },
+    methods: {
+      // 获取进程信息
+      getProcessInfo () {
+        let getProcessInfoUrl = `/getApplyRightProgress`;
+        this.postRequest(getProcessInfoUrl)
+          .then((result) => {
+            // console.log('申请进程数据',result)
+            this.tableData = result.data;
+
+          }).catch((err) => {
+            console.log(err)
+          });
+      }
+    }
+  };
 </script>
 
 <style lang="stylus" scoped>
