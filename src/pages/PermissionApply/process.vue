@@ -87,7 +87,6 @@
 </script>
 
 <style lang="stylus" scoped>
-@import url('//unpkg.com/element-ui@2.11.0/lib/theme-chalk/index.css');
 @import '~stylus/common.styl';
 
 #CurrentPermission 

@@ -4,20 +4,31 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const Login = () => import('@/pages/login')
+const Main = () => import('@/components/Main')
+const WorkPanel = () => import('@/pages/ProductManager/WorkPanel')
+const QuestionPool = () => import('@/pages/QuestionPool')
+const QuestionDetail = () => import('@/pages/QuestionDetail')
+const WorkForum = () => import('@/pages/WorkForum')
+const PermissionApply = () => import('@/pages/PermissionApply')
+const ManagerWorkPanel = () => import('@/pages/Manager/WorkPanel')
+const ProgrammerWorkPanel = () => import('@/pages/Programmer/WorkPanel')
+const ForumDetails = () => import('@/pages/Forum/ForumDetails')
+
 export default new Router({
   routes: [
     {
       path: '/',
-      component: resolve => require(['@/pages/login'], resolve),
+      component: Login
     },
     {
       path: '/main',
-      component: resolve => require(['@/components/Main'], resolve),
+      component: Main,
       children: [
         // 产品经理工作面板
         {
           path: '/workPanel',
-          component: resolve => require(['@/pages/ProductManager/WorkPanel'], resolve),
+          component: WorkPanel,
           meta: {
             title: '工作面板',
           }
@@ -25,7 +36,7 @@ export default new Router({
         // 问题池
         {
           path: '/questionPool',
-          component: resolve => require(['@/pages/QuestionPool'], resolve),
+          component: QuestionPool,
           meta: {
             title: '问题池',
           }
@@ -33,7 +44,7 @@ export default new Router({
         // 问题详情
         {
           path: '/questionDetail',
-          component: resolve => require(['@/pages/QuestionDetail'], resolve),
+          component: QuestionDetail,
           meta: {
             title: '问题详情',
           }
@@ -41,7 +52,7 @@ export default new Router({
         // 论坛
         {
           path: '/workForum',
-          component: resolve => require(['@/pages/WorkForum'], resolve),
+          component: WorkForum,
           meta: {
             title: '论坛',
           }
@@ -49,7 +60,7 @@ export default new Router({
         // 权限申请
         {
           path: '/permissionApply',
-          component: resolve => require(['@/pages/PermissionApply'], resolve),
+          component: PermissionApply,
           meta: {
             title: '申请权限',
           }
@@ -57,7 +68,7 @@ export default new Router({
         // 管理员工作面板
         {
           path: '/managerWorkPanel',
-          component: resolve => require(['@/pages/Manager/WorkPanel'], resolve),
+          component: ManagerWorkPanel,
           meta: {
             title: '工作面板',
           }
@@ -65,7 +76,7 @@ export default new Router({
         // 研发工作面板
         {
           path: '/ProgrammerWorkPanel',
-          component: resolve => require(['@/pages/Programmer/WorkPanel'], resolve),
+          component: ProgrammerWorkPanel,
           meta: {
             title: '工作面板',
           }
@@ -74,7 +85,7 @@ export default new Router({
         {
           path: '/forumDetails/',
           name: 'forumDetails',
-          component: resolve => require(['@/pages/Forum/ForumDetails'], resolve),
+          component: ForumDetails,
           meta: {
             title: '论坛详情',
           }
